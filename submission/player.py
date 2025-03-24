@@ -2,6 +2,8 @@ from agents.agent import Agent
 from gym_env import PokerEnv
 import random
 
+import treys
+
 action_types = PokerEnv.ActionType
 
 
@@ -12,6 +14,7 @@ class PlayerAgent(Agent):
     def __init__(self, stream: bool = True):
         super().__init__(stream)
         # Initialize any instance variables here
+        
         self.hand_number = 0
         self.last_action = None
         self.won_hands = 0
