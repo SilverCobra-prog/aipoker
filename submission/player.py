@@ -1,200 +1,89 @@
 from agents.agent import Agent
 from gym_env import PokerEnv
 import random
-import math
-import time
-
-import treys
+from treys import Evaluator
 
 action_types = PokerEnv.ActionType
-
-class Node:
-    def __init__(self, state, parent=None, action=None):
-        self.state = state  # Includes observation and any extra state info
-        self.parent = parent
-        self.action = action  # The action that led to this state from parent
-        self.children = []
-        self.visits = 0
-        self.total_reward = 0
-        self.untried_actions = self.get_valid_actions()
-
-    def get_valid_actions(self):
-        # Assuming state contains observation with 'valid_actions'
-        valid = self.state["observation"]["valid_actions"]
-        return [i for i, is_valid in enumerate(valid) if is_valid]
-
-    def is_fully_expanded(self):
-        return len(self.untried_actions) == 0
-
-    def expand(self):
-        action = self.untried_actions.pop()
-        next_state = self.simulate_action(self.state, action)
-        child = Node(next_state, parent=self, action=action)
-        self.children.append(child)
-        return child
-
-    def simulate_action(self, state, action):
-        """
-        Simulates the result of taking an action in the current state.
-        This method updates the state based on the action taken.
-        """
-        # Clone the current state to avoid modifying the original
-        next_state = {
-            "observation": state["observation"].copy(),
-            "reward": state["reward"],
-            "terminated": state["terminated"],
-            "truncated": state["truncated"],
-            "info": state["info"].copy()
-        }
-
-        # Ensure the 'pot' key exists in the info dictionary
-        next_state["info"]["pot"] = next_state["info"].get("pot", 0)
-
-        # Handle the action and update the state
-        if action == action_types.RAISE.value:
-            # Deduct chips for raising and add to the pot
-            raise_amount = next_state["observation"].get("min_raise", 0)
-            next_state["observation"]["chips"] = next_state["observation"].get("chips", 0) - raise_amount
-            next_state["info"]["pot"] += raise_amount
-        elif action == action_types.CALL.value:
-            # Match the opponent's bet and add to the pot
-            call_amount = next_state["info"].get("current_bet", 0)
-            next_state["observation"]["chips"] = next_state["observation"].get("chips", 0) - call_amount
-            next_state["info"]["pot"] += call_amount
-        elif action == action_types.FOLD.value:
-            # Folding ends the game for the player
-            next_state["terminated"] = True
-            next_state["reward"] = -1 
-        elif action == action_types.DISCARD.value:
-            # Discard a card (example logic)
-            if "hand" in next_state["observation"]:
-                next_state["observation"]["hand"] = next_state["observation"]["hand"][1:]  # Discard the first card
-
-        # Check for terminal conditions (e.g., no chips left)
-        if next_state["observation"].get("chips", 0) <= 0:
-            next_state["terminated"] = True
-            next_state["reward"] = -10
-
-        return next_state
-
-    def is_terminal(self):
-        return self.state["terminated"]
-
-    def best_uct_child(self, c_param=1.4):
-        def uct(node):
-            if node.visits == 0:
-                return float("inf")
-            return (node.total_reward / node.visits) + c_param * math.sqrt(math.log(self.visits) / node.visits)
-
-        return max(self.children, key=uct)
+int_to_card = PokerEnv.int_to_card
 
 class PlayerAgent(Agent):
     def __name__(self):
         return "PlayerAgent"
 
-    def __init__(self, stream: bool = True):
+    def __init__(self, stream: bool = False):
         super().__init__(stream)
-        # Initialize any instance variables here
-        
-        self.hand_number = 0
-        self.last_action = None
-        self.won_hands = 0
+        self.evaluator = Evaluator()
 
     def act(self, observation, reward, terminated, truncated, info):
-        root_state = {
-            "observation": observation,
-            "reward": reward,
-            "terminated": terminated,
-            "truncated": truncated,
-            "info": info
-        }
+        # Log new street starts with important info
+        if observation["street"] == 0:  # Preflop
+            self.logger.debug(f"Hole cards: {[int_to_card(c) for c in observation['my_cards']]}")
+        elif observation["community_cards"]:  # New community cards revealed
+            visible_cards = [c for c in observation["community_cards"] if c != -1]
+            if visible_cards:
+                street_names = ["Preflop", "Flop", "Turn", "River"]
+                self.logger.debug(f"{street_names[observation['street']]}: {[int_to_card(c) for c in visible_cards]}")
 
-        root = Node(root_state)
-        best_node = self.monte_carlo_tree_search(root, time_limit=0.05)  # 50ms budget
-        action_type = best_node.action
+        my_cards = [int(card) for card in observation["my_cards"]]
+        community_cards = [card for card in observation["community_cards"] if card != -1]
+        opp_discarded_card = [observation["opp_discarded_card"]] if observation["opp_discarded_card"] != -1 else []
+        opp_drawn_card = [observation["opp_drawn_card"]] if observation["opp_drawn_card"] != -1 else []
 
-        # Setup default values
+        # Calculate equity through Monte Carlo simulation
+        shown_cards = my_cards + community_cards + opp_discarded_card + opp_drawn_card
+        non_shown_cards = [i for i in range(27) if i not in shown_cards]
+
+        def evaluate_hand(cards):
+            my_cards, opp_cards, community_cards = cards
+            my_cards = list(map(int_to_card, my_cards))
+            opp_cards = list(map(int_to_card, opp_cards))
+            community_cards = list(map(int_to_card, community_cards))
+            my_hand_rank = self.evaluator.evaluate(my_cards, community_cards)
+            opp_hand_rank = self.evaluator.evaluate(opp_cards, community_cards)
+            return my_hand_rank < opp_hand_rank
+
+        # Run Monte Carlo simulation
+        num_simulations = 1000
+        wins = sum(
+            evaluate_hand((my_cards, opp_drawn_card + drawn_cards[: 2 - len(opp_drawn_card)], community_cards + drawn_cards[2 - len(opp_drawn_card) :]))
+            for _ in range(num_simulations)
+            if (drawn_cards := random.sample(non_shown_cards, 7 - len(community_cards) - len(opp_drawn_card)))
+        )
+        equity = wins / num_simulations
+
+        # Calculate pot odds
+        continue_cost = observation["opp_bet"] - observation["my_bet"]
+        pot_size = observation["my_bet"] + observation["opp_bet"]
+        pot_odds = continue_cost / (continue_cost + pot_size) if continue_cost > 0 else 0
+
+        self.logger.debug(f"Equity: {equity:.2f}, Pot odds: {pot_odds:.2f}")
+
+        # Decision making
         raise_amount = 0
-        card_to_discard = -1  # -1 means no discard
-        
-        # If we chose to raise, pick a random amount between min and max
-        if action_type == action_types.RAISE.value:
-            raise_amount = random.randint(observation["min_raise"], observation["max_raise"])
-        if action_type == action_types.DISCARD.value:
+        card_to_discard = -1
+
+        # Only log very significant decisions at INFO level
+        if equity > 0.8 and observation["valid_actions"][action_types.RAISE.value]:
+            raise_amount = min(int(pot_size * 0.75), observation["max_raise"])
+            raise_amount = max(raise_amount, observation["min_raise"])
+            action_type = action_types.RAISE.value
+            if raise_amount > 20:  # Only log large raises
+                self.logger.info(f"Large raise to {raise_amount} with equity {equity:.2f}")
+        elif equity >= pot_odds and observation["valid_actions"][action_types.CALL.value]:
+            action_type = action_types.CALL.value
+        elif observation["valid_actions"][action_types.CHECK.value]:
+            action_type = action_types.CHECK.value
+        elif observation["valid_actions"][action_types.DISCARD.value]:
+            action_type = action_types.DISCARD.value
             card_to_discard = random.randint(0, 1)
-        
+            self.logger.debug(f"Discarding card {card_to_discard}: {int_to_card(my_cards[card_to_discard])}")
+        else:
+            action_type = action_types.FOLD.value
+            if observation["opp_bet"] > 20:  # Only log significant folds
+                self.logger.info(f"Folding to large bet of {observation['opp_bet']}")
+
         return action_type, raise_amount, card_to_discard
 
-    def monte_carlo_tree_search(self, root, time_limit=0.5):
-        start_time = time.time()
-        while time.time() - start_time < time_limit:
-            leaf = self.traverse(root)
-            result = self.rollout(leaf)
-            self.backpropagate(leaf, result)
-        return self.best_child(root)
-
-    def traverse(self, node):
-        while not node.is_terminal() and node.is_fully_expanded():
-            node = node.best_uct_child()
-        if not node.is_terminal() and not node.is_fully_expanded():
-            return node.expand()
-        return node
-
-    def rollout(self, node):
-        # Simple random rollout policy
-        current = node
-        depth = 0
-        while not current.is_terminal() and depth < 5:
-            valid = current.get_valid_actions()
-            if not valid:
-                break
-            action = random.choice(valid)
-            next_state = current.simulate_action(current.state, action)
-            current = Node(next_state)
-            depth += 1
-        return self.evaluate(current.state)
-
-    def evaluate(self, state):
-        observation = state.get("observation", {})
-        info = state.get("info", {})
-        
-        # Use final reward if terminal
-        if state.get("terminated", False):
-            return state.get("reward", 0)
-        
-        # Example heuristics:
-        player_chips = observation.get("chips", 0)
-        opp_chips = info.get("opp_chips", 0)
-        pot = info.get("pot", 0)
-        hand_strength = info.get("hand_strength", 0.5)  # Range 0-1 if available
-
-        # Reward = weighted sum of hand strength and chip advantage
-        score = (
-            hand_strength * 100 + 
-            (player_chips - opp_chips) * 0.1 + 
-            pot * 0.05
-        )
-        return score
-
-
-    def backpropagate(self, node, result):
-        while node:
-            node.visits += 1
-            node.total_reward += result
-            node = node.parent
-
-    def best_child(self, node):
-        return max(node.children, key=lambda c: c.visits) if node.children else node
-
     def observe(self, observation, reward, terminated, truncated, info):
-        # Log interesting events when observing opponent's actions
-        pass
-        if terminated:
-            self.logger.info(f"Game ended with reward: {reward}")
-            self.hand_number += 1
-            if reward > 0:
-                self.won_hands += 1
-            self.last_action = None
-        else:
-            # log observation keys
-            self.logger.info(f"Observation keys: {observation}")
+        if terminated and abs(reward) > 20:  # Only log significant hand results
+            self.logger.info(f"Significant hand completed with reward: {reward}")
