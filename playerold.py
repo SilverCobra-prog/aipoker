@@ -55,8 +55,6 @@ class PlayerAgent(Agent):
         continue_cost = observation["opp_bet"] - observation["my_bet"]
         pot_size = observation["my_bet"] + observation["opp_bet"]
         pot_odds = continue_cost / (continue_cost + pot_size) if continue_cost > 0 else 0
-        
-
 
         self.logger.debug(f"Equity: {equity:.2f}, Pot odds: {pot_odds:.2f}")
 
@@ -64,13 +62,9 @@ class PlayerAgent(Agent):
         raise_amount = 0
         card_to_discard = -1
 
-        og_equity = equity
-        # Adjusted Equity
-        equity = equity - (0.9 - equity) * ((observation["opp_bet"] * 2) / 100)
-
         # Only log very significant decisions at INFO level
-        if equity > 0.7 and observation["valid_actions"][action_types.RAISE.value] and random.random() < 0.7:
-            raise_amount = min(int(pot_size * random.uniform(equity/2, equity*1.5)), observation["max_raise"])
+        if equity > 0.8 and observation["valid_actions"][action_types.RAISE.value]:
+            raise_amount = min(int(pot_size * 0.75), observation["max_raise"])
             raise_amount = max(raise_amount, observation["min_raise"])
             action_type = action_types.RAISE.value
             if raise_amount > 20:  # Only log large raises
@@ -78,44 +72,11 @@ class PlayerAgent(Agent):
         elif equity >= pot_odds and observation["valid_actions"][action_types.CALL.value]:
             action_type = action_types.CALL.value
         elif observation["valid_actions"][action_types.CHECK.value]:
-            if random.random() < 0.75 or observation["valid_actions"][action_types.RAISE.value] == False:
-                action_type = action_types.CHECK.value
-            else:
-                raise_amount = min(int(pot_size * random.uniform(0.5, 1.5)), observation["max_raise"])
-                raise_amount = max(raise_amount, observation["min_raise"])
-                action_type = action_types.RAISE.value
+            action_type = action_types.CHECK.value
         elif observation["valid_actions"][action_types.DISCARD.value]:
             action_type = action_types.DISCARD.value
             card_to_discard = random.randint(0, 1)
-
-            num_simulations = 100
-
-            wins = sum(
-            evaluate_hand(([my_cards[0], drawn_cards[0]], opp_drawn_card + drawn_cards[1: 3 - len(opp_drawn_card)], community_cards + drawn_cards[3 - len(opp_drawn_card) :]))
-            for _ in range(num_simulations)
-            if (drawn_cards := random.sample(non_shown_cards, 7 - len(community_cards) - len(opp_drawn_card)))
-            )
-            equity1 = wins / num_simulations - 0.05
-
-            wins = sum(
-            evaluate_hand(([my_cards[0], drawn_cards[0]], opp_drawn_card + drawn_cards[1: 3 - len(opp_drawn_card)], community_cards + drawn_cards[3 - len(opp_drawn_card) :]))
-            for _ in range(num_simulations)
-            if (drawn_cards := random.sample(non_shown_cards, 7 - len(community_cards) - len(opp_drawn_card)))
-            )
-            equity2 = wins / num_simulations - 0.05
-
-            if equity1 > og_equity and equity1 >= equity2:
-                action_type = action_types.DISCARD.value
-                card_to_discard = 0
-                self.logger.debug(f"Discarding card {card_to_discard}: {int_to_card(my_cards[card_to_discard])}")
-            elif equity2 > og_equity and equity1 <= equity2:
-                action_type = action_types.DISCARD.value
-                card_to_discard = 1
-                self.logger.debug(f"Discarding card {card_to_discard}: {int_to_card(my_cards[card_to_discard])}")
-
-            else:
-                action_type = action_types.FOLD.value
-
+            self.logger.debug(f"Discarding card {card_to_discard}: {int_to_card(my_cards[card_to_discard])}")
         else:
             action_type = action_types.FOLD.value
             if observation["opp_bet"] > 20:  # Only log significant folds

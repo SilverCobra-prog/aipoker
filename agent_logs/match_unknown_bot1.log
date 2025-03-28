@@ -1559,3 +1559,180 @@
 2025-03-27 23:50:35,237 - PlayerAgent - INFO - Large raise to 30 with equity 0.93
 2025-03-27 23:50:35,264 - PlayerAgent - INFO - Significant hand completed with reward: 50.0
 2025-03-27 23:50:37,297 - PlayerAgent - INFO - Large raise to 22 with equity 0.88
+2025-03-27 23:51:58,560 - PlayerAgent - INFO - Starting agent server on 0.0.0.0:8001
+2025-03-27 23:52:00,808 - PlayerAgent - INFO - Folding to large bet of 78
+2025-03-27 23:52:00,814 - PlayerAgent - INFO - Significant hand completed with reward: -38.0
+2025-03-27 23:52:34,503 - PlayerAgent - INFO - Starting agent server on 0.0.0.0:8001
+2025-03-27 23:52:35,211 - PlayerAgent - INFO - Significant hand completed with reward: 32.0
+2025-03-27 23:52:37,102 - PlayerAgent - INFO - Large raise to 50 with equity 0.91
+2025-03-27 23:52:37,130 - PlayerAgent - INFO - Significant hand completed with reward: 94.0
+2025-03-27 23:52:37,939 - PlayerAgent - INFO - Folding to large bet of 51
+2025-03-27 23:54:24,694 - PlayerAgent - INFO - Starting agent server on 0.0.0.0:8001
+2025-03-27 23:54:26,071 - PlayerAgent - INFO - Significant hand completed with reward: 30.0
+2025-03-27 23:54:26,564 - PlayerAgent - INFO - Significant hand completed with reward: -49.0
+2025-03-27 23:54:27,599 - PlayerAgent - INFO - Significant hand completed with reward: 22.0
+2025-03-27 23:54:32,084 - PlayerAgent - INFO - Folding to large bet of 51
+2025-03-27 23:54:32,088 - PlayerAgent - INFO - Significant hand completed with reward: -24.0
+2025-03-27 23:54:37,219 - PlayerAgent - INFO - Starting agent server on 0.0.0.0:8001
+2025-03-27 23:54:38,267 - PlayerAgent - INFO - Significant hand completed with reward: 21.0
+2025-03-27 23:54:38,477 - PlayerAgent - INFO - Significant hand completed with reward: -53.0
+2025-03-27 23:54:39,206 - PlayerAgent - INFO - Significant hand completed with reward: 44.0
+2025-03-27 23:54:41,427 - PlayerAgent - INFO - Significant hand completed with reward: -47.0
+2025-03-27 23:54:41,934 - PlayerAgent - INFO - Significant hand completed with reward: 37.0
+2025-03-27 23:54:42,833 - PlayerAgent - INFO - Folding to large bet of 27
+2025-03-27 23:54:43,698 - PlayerAgent - INFO - Significant hand completed with reward: 22.0
+2025-03-27 23:54:43,927 - PlayerAgent - INFO - Large raise to 43 with equity 0.87
+2025-03-27 23:54:43,958 - PlayerAgent - INFO - Significant hand completed with reward: 29.0
+2025-03-27 23:54:45,032 - PlayerAgent - INFO - Folding to large bet of 27
+2025-03-27 23:54:48,781 - PlayerAgent - INFO - Folding to large bet of 49
+2025-03-27 23:54:51,601 - PlayerAgent - INFO - Folding to large bet of 23
+2025-03-27 23:54:52,845 - PlayerAgent - INFO - Large raise to 25 with equity 0.92
+2025-03-27 23:54:52,876 - PlayerAgent - INFO - Significant hand completed with reward: 27.0
+2025-03-27 23:54:54,739 - PlayerAgent - INFO - Significant hand completed with reward: -51.0
+2025-03-27 23:54:55,599 - PlayerAgent - INFO - Large raise to 25 with equity 0.99
+2025-03-27 23:54:59,527 - PlayerAgent - INFO - Significant hand completed with reward: -55.0
+2025-03-27 23:55:00,603 - PlayerAgent - INFO - Significant hand completed with reward: -24.0
+2025-03-27 23:55:01,434 - PlayerAgent - INFO - Folding to large bet of 27
+2025-03-27 23:55:02,147 - PlayerAgent - INFO - Large raise to 24 with equity 1.00
+2025-03-27 23:55:02,226 - PlayerAgent - INFO - Significant hand completed with reward: 100.0
+2025-03-27 23:55:03,480 - PlayerAgent - INFO - Significant hand completed with reward: -21.0
+2025-03-27 23:55:04,520 - PlayerAgent - INFO - Folding to large bet of 41
+2025-03-27 23:55:04,812 - PlayerAgent - INFO - Significant hand completed with reward: -30.0
+2025-03-27 23:55:06,093 - PlayerAgent - INFO - Folding to large bet of 58
+2025-03-27 23:55:06,814 - PlayerAgent - INFO - Significant hand completed with reward: 30.0
+2025-03-27 23:55:07,593 - PlayerAgent - INFO - Significant hand completed with reward: 36.0
+2025-03-27 23:55:08,716 - PlayerAgent - INFO - Large raise to 24 with equity 0.82
+2025-03-27 23:55:08,788 - PlayerAgent - INFO - Significant hand completed with reward: -100.0
+2025-03-27 23:55:13,272 - PlayerAgent - INFO - Large raise to 33 with equity 0.82
+2025-03-27 23:55:13,298 - PlayerAgent - INFO - Significant hand completed with reward: 22.0
+2025-03-27 23:55:13,696 - PlayerAgent - INFO - Large raise to 22 with equity 1.00
+2025-03-27 23:55:13,723 - PlayerAgent - INFO - Significant hand completed with reward: 37.0
+2025-03-27 23:55:14,146 - PlayerAgent - INFO - Significant hand completed with reward: 30.0
+2025-03-27 23:55:15,345 - PlayerAgent - INFO - Significant hand completed with reward: -26.0
+2025-03-27 23:55:16,460 - PlayerAgent - INFO - Large raise to 22 with equity 0.87
+2025-03-27 23:55:17,840 - PlayerAgent - INFO - Large raise to 51 with equity 0.81
+2025-03-27 23:55:18,734 - PlayerAgent - INFO - Significant hand completed with reward: -21.0
+2025-03-27 23:55:19,467 - PlayerAgent - INFO - Large raise to 39 with equity 1.00
+2025-03-27 23:55:19,568 - PlayerAgent - INFO - Significant hand completed with reward: 100.0
+2025-03-27 23:55:19,824 - PlayerAgent - INFO - Folding to large bet of 30
+2025-03-27 23:55:20,202 - PlayerAgent - INFO - Folding to large bet of 23
+2025-03-27 23:55:20,598 - PlayerAgent - INFO - Folding to large bet of 23
+2025-03-27 23:55:23,063 - PlayerAgent - INFO - Large raise to 25 with equity 0.90
+2025-03-27 23:55:23,366 - PlayerAgent - INFO - Significant hand completed with reward: 27.0
+2025-03-27 23:55:23,540 - PlayerAgent - INFO - Folding to large bet of 21
+2025-03-27 23:55:27,435 - PlayerAgent - INFO - Large raise to 46 with equity 0.81
+2025-03-27 23:55:27,463 - PlayerAgent - INFO - Significant hand completed with reward: -100.0
+2025-03-27 23:55:29,099 - PlayerAgent - INFO - Significant hand completed with reward: 33.0
+2025-03-27 23:55:30,710 - PlayerAgent - INFO - Large raise to 23 with equity 0.88
+2025-03-27 23:55:30,739 - PlayerAgent - INFO - Significant hand completed with reward: 24.0
+2025-03-27 23:55:32,462 - PlayerAgent - INFO - Folding to large bet of 23
+2025-03-27 23:55:34,033 - PlayerAgent - INFO - Large raise to 42 with equity 0.85
+2025-03-27 23:55:35,328 - PlayerAgent - INFO - Significant hand completed with reward: -25.0
+2025-03-27 23:55:36,191 - PlayerAgent - INFO - Large raise to 32 with equity 0.80
+2025-03-27 23:55:36,248 - PlayerAgent - INFO - Significant hand completed with reward: -100.0
+2025-03-27 23:55:38,032 - PlayerAgent - INFO - Large raise to 27 with equity 0.98
+2025-03-27 23:55:38,132 - PlayerAgent - INFO - Significant hand completed with reward: 100.0
+2025-03-27 23:55:41,786 - PlayerAgent - INFO - Folding to large bet of 23
+2025-03-27 23:55:43,578 - PlayerAgent - INFO - Folding to large bet of 24
+2025-03-27 23:55:46,370 - PlayerAgent - INFO - Large raise to 45 with equity 0.93
+2025-03-27 23:55:46,509 - PlayerAgent - INFO - Significant hand completed with reward: -100.0
+2025-03-27 23:55:50,415 - PlayerAgent - INFO - Large raise to 54 with equity 0.99
+2025-03-27 23:55:50,446 - PlayerAgent - INFO - Significant hand completed with reward: 36.0
+2025-03-27 23:55:54,056 - PlayerAgent - INFO - Significant hand completed with reward: -80.0
+2025-03-27 23:55:56,376 - PlayerAgent - INFO - Large raise to 49 with equity 0.82
+2025-03-27 23:55:56,471 - PlayerAgent - INFO - Significant hand completed with reward: -100.0
+2025-03-27 23:56:00,191 - PlayerAgent - INFO - Significant hand completed with reward: -27.0
+2025-03-27 23:56:02,019 - PlayerAgent - INFO - Large raise to 22 with equity 0.95
+2025-03-27 23:56:02,091 - PlayerAgent - INFO - Significant hand completed with reward: 100.0
+2025-03-27 23:56:03,493 - PlayerAgent - INFO - Significant hand completed with reward: 23.0
+2025-03-27 23:56:07,346 - PlayerAgent - INFO - Large raise to 22 with equity 0.86
+2025-03-27 23:56:07,694 - PlayerAgent - INFO - Folding to large bet of 21
+2025-03-27 23:56:08,902 - PlayerAgent - INFO - Large raise to 50 with equity 0.96
+2025-03-27 23:56:08,929 - PlayerAgent - INFO - Significant hand completed with reward: -93.0
+2025-03-27 23:56:09,516 - PlayerAgent - INFO - Large raise to 25 with equity 0.91
+2025-03-27 23:56:09,545 - PlayerAgent - INFO - Significant hand completed with reward: 47.0
+2025-03-27 23:56:11,907 - PlayerAgent - INFO - Folding to large bet of 21
+2025-03-27 23:56:12,503 - PlayerAgent - INFO - Folding to large bet of 46
+2025-03-27 23:56:13,672 - PlayerAgent - INFO - Significant hand completed with reward: -87.0
+2025-03-27 23:56:14,501 - PlayerAgent - INFO - Significant hand completed with reward: 30.0
+2025-03-27 23:56:16,653 - PlayerAgent - INFO - Significant hand completed with reward: -34.0
+2025-03-27 23:56:16,826 - PlayerAgent - INFO - Folding to large bet of 25
+2025-03-27 23:56:22,813 - PlayerAgent - INFO - Significant hand completed with reward: -33.0
+2025-03-27 23:56:24,030 - PlayerAgent - INFO - Significant hand completed with reward: -28.0
+2025-03-27 23:56:24,302 - PlayerAgent - INFO - Large raise to 41 with equity 0.86
+2025-03-27 23:56:24,334 - PlayerAgent - INFO - Significant hand completed with reward: 77.0
+2025-03-27 23:56:24,529 - PlayerAgent - INFO - Folding to large bet of 22
+2025-03-27 23:56:25,554 - PlayerAgent - INFO - Large raise to 34 with equity 0.82
+2025-03-27 23:56:25,606 - PlayerAgent - INFO - Significant hand completed with reward: -100.0
+2025-03-27 23:56:25,999 - PlayerAgent - INFO - Significant hand completed with reward: 30.0
+2025-03-27 23:56:29,409 - PlayerAgent - INFO - Significant hand completed with reward: -58.0
+2025-03-27 23:56:30,338 - PlayerAgent - INFO - Significant hand completed with reward: -50.0
+2025-03-27 23:56:30,784 - PlayerAgent - INFO - Significant hand completed with reward: -55.0
+2025-03-27 23:56:32,310 - PlayerAgent - INFO - Folding to large bet of 47
+2025-03-27 23:56:34,038 - PlayerAgent - INFO - Significant hand completed with reward: -22.0
+2025-03-27 23:56:35,909 - PlayerAgent - INFO - Large raise to 39 with equity 0.96
+2025-03-27 23:56:35,937 - PlayerAgent - INFO - Significant hand completed with reward: 100.0
+2025-03-27 23:56:40,858 - PlayerAgent - INFO - Folding to large bet of 21
+2025-03-27 23:56:44,407 - PlayerAgent - INFO - Significant hand completed with reward: -36.0
+2025-03-27 23:56:45,737 - PlayerAgent - INFO - Large raise to 50 with equity 0.99
+2025-03-27 23:56:45,788 - PlayerAgent - INFO - Significant hand completed with reward: 100.0
+2025-03-27 23:56:48,272 - PlayerAgent - INFO - Significant hand completed with reward: -35.0
+2025-03-27 23:56:50,148 - PlayerAgent - INFO - Significant hand completed with reward: 31.0
+2025-03-27 23:56:51,612 - PlayerAgent - INFO - Significant hand completed with reward: 47.0
+2025-03-27 23:56:56,183 - PlayerAgent - INFO - Large raise to 36 with equity 0.84
+2025-03-27 23:56:56,213 - PlayerAgent - INFO - Significant hand completed with reward: 36.0
+2025-03-27 23:57:00,287 - PlayerAgent - INFO - Folding to large bet of 21
+2025-03-27 23:57:02,764 - PlayerAgent - INFO - Significant hand completed with reward: 24.0
+2025-03-27 23:57:03,487 - PlayerAgent - INFO - Large raise to 27 with equity 0.81
+2025-03-27 23:57:06,184 - PlayerAgent - INFO - Significant hand completed with reward: -22.0
+2025-03-27 23:57:10,838 - PlayerAgent - INFO - Significant hand completed with reward: -21.0
+2025-03-27 23:57:11,511 - PlayerAgent - INFO - Significant hand completed with reward: -25.0
+2025-03-27 23:57:13,035 - PlayerAgent - INFO - Significant hand completed with reward: -21.0
+2025-03-27 23:57:15,401 - PlayerAgent - INFO - Large raise to 38 with equity 0.89
+2025-03-27 23:57:15,431 - PlayerAgent - INFO - Significant hand completed with reward: 72.0
+2025-03-27 23:57:18,298 - PlayerAgent - INFO - Large raise to 48 with equity 0.93
+2025-03-27 23:57:18,328 - PlayerAgent - INFO - Significant hand completed with reward: 80.0
+2025-03-27 23:57:21,067 - PlayerAgent - INFO - Folding to large bet of 21
+2025-03-27 23:57:23,419 - PlayerAgent - INFO - Folding to large bet of 34
+2025-03-27 23:57:23,624 - PlayerAgent - INFO - Folding to large bet of 22
+2025-03-27 23:57:24,256 - PlayerAgent - INFO - Significant hand completed with reward: -29.0
+2025-03-27 23:57:27,243 - PlayerAgent - INFO - Significant hand completed with reward: 30.0
+2025-03-27 23:57:29,241 - PlayerAgent - INFO - Significant hand completed with reward: -24.0
+2025-03-27 23:57:29,466 - PlayerAgent - INFO - Large raise to 32 with equity 0.90
+2025-03-27 23:57:29,521 - PlayerAgent - INFO - Significant hand completed with reward: -100.0
+2025-03-27 23:57:29,791 - PlayerAgent - INFO - Significant hand completed with reward: 75.0
+2025-03-27 23:57:31,262 - PlayerAgent - INFO - Large raise to 28 with equity 0.98
+2025-03-27 23:57:31,534 - PlayerAgent - INFO - Large raise to 22 with equity 0.80
+2025-03-27 23:57:31,585 - PlayerAgent - INFO - Significant hand completed with reward: -100.0
+2025-03-27 23:57:32,213 - PlayerAgent - INFO - Large raise to 33 with equity 0.99
+2025-03-27 23:57:32,265 - PlayerAgent - INFO - Significant hand completed with reward: 100.0
+2025-03-27 23:57:35,355 - PlayerAgent - INFO - Folding to large bet of 23
+2025-03-27 23:57:36,536 - PlayerAgent - INFO - Folding to large bet of 56
+2025-03-27 23:57:38,451 - PlayerAgent - INFO - Large raise to 24 with equity 0.89
+2025-03-27 23:57:38,502 - PlayerAgent - INFO - Significant hand completed with reward: -100.0
+2025-03-27 23:57:39,321 - PlayerAgent - INFO - Large raise to 42 with equity 0.94
+2025-03-27 23:57:39,349 - PlayerAgent - INFO - Significant hand completed with reward: 70.0
+2025-03-27 23:57:40,984 - PlayerAgent - INFO - Significant hand completed with reward: 37.0
+2025-03-27 23:57:42,453 - PlayerAgent - INFO - Large raise to 27 with equity 0.96
+2025-03-27 23:57:42,499 - PlayerAgent - INFO - Large raise to 49 with equity 0.92
+2025-03-27 23:57:42,526 - PlayerAgent - INFO - Significant hand completed with reward: 100.0
+2025-03-27 23:57:43,834 - PlayerAgent - INFO - Significant hand completed with reward: 26.0
+2025-03-27 23:57:46,679 - PlayerAgent - INFO - Large raise to 25 with equity 0.99
+2025-03-27 23:57:46,709 - PlayerAgent - INFO - Significant hand completed with reward: 49.0
+2025-03-27 23:57:47,218 - PlayerAgent - INFO - Folding to large bet of 55
+2025-03-27 23:57:47,419 - PlayerAgent - INFO - Significant hand completed with reward: -38.0
+2025-03-27 23:57:55,459 - PlayerAgent - INFO - Significant hand completed with reward: 40.0
+2025-03-27 23:57:56,744 - PlayerAgent - INFO - Significant hand completed with reward: -22.0
+2025-03-27 23:57:57,661 - PlayerAgent - INFO - Significant hand completed with reward: -70.0
+2025-03-27 23:57:58,080 - PlayerAgent - INFO - Large raise to 40 with equity 0.96
+2025-03-27 23:57:58,112 - PlayerAgent - INFO - Significant hand completed with reward: 67.0
+2025-03-27 23:57:59,298 - PlayerAgent - INFO - Large raise to 45 with equity 0.81
+2025-03-27 23:57:59,327 - PlayerAgent - INFO - Significant hand completed with reward: 30.0
+2025-03-27 23:58:00,142 - PlayerAgent - INFO - Significant hand completed with reward: 32.0
+2025-03-27 23:58:01,845 - PlayerAgent - INFO - Large raise to 37 with equity 0.90
+2025-03-27 23:58:01,874 - PlayerAgent - INFO - Significant hand completed with reward: 37.0
+2025-03-27 23:58:03,675 - PlayerAgent - INFO - Large raise to 31 with equity 0.96
+2025-03-27 23:58:03,779 - PlayerAgent - INFO - Significant hand completed with reward: -100.0
+2025-03-27 23:58:05,936 - PlayerAgent - INFO - Folding to large bet of 87
+2025-03-27 23:58:05,939 - PlayerAgent - INFO - Significant hand completed with reward: -22.0
+2025-03-27 23:58:07,580 - PlayerAgent - INFO - Significant hand completed with reward: 22.0
