@@ -265,3 +265,952 @@
 2025-03-27 22:43:59,130 - AllInAgent - INFO - Going all-in for 98
 2025-03-27 22:43:59,356 - AllInAgent - INFO - Going all-in for 98
 2025-03-27 22:43:59,743 - AllInAgent - INFO - Going all-in for 98
+2025-03-27 22:59:44,824 - PlayerAgent - INFO - Starting agent server on 0.0.0.0:8000
+2025-03-27 22:59:46,517 - PlayerAgent - INFO - Large raise to 23 with equity 0.93
+2025-03-27 22:59:46,855 - PlayerAgent - INFO - Folding to large bet of 30
+2025-03-27 22:59:48,754 - PlayerAgent - INFO - Significant hand completed with reward: 30.0
+2025-03-27 22:59:49,145 - PlayerAgent - INFO - Large raise to 48 with equity 0.91
+2025-03-27 23:00:02,694 - PlayerAgent - INFO - Large raise to 48 with equity 0.81
+2025-03-27 23:00:02,743 - PlayerAgent - INFO - Significant hand completed with reward: -100.0
+2025-03-27 23:00:05,125 - PlayerAgent - INFO - Large raise to 48 with equity 0.84
+2025-03-27 23:00:05,176 - PlayerAgent - INFO - Significant hand completed with reward: -100.0
+2025-03-27 23:00:06,514 - PlayerAgent - INFO - Significant hand completed with reward: -30.0
+2025-03-27 23:00:08,324 - PlayerAgent - INFO - Folding to large bet of 30
+2025-03-27 23:00:18,835 - PlayerAgent - INFO - Significant hand completed with reward: -30.0
+2025-03-27 23:00:23,366 - PlayerAgent - INFO - Large raise to 23 with equity 0.87
+2025-03-27 23:00:26,167 - PlayerAgent - INFO - Large raise to 23 with equity 0.91
+2025-03-27 23:00:26,969 - PlayerAgent - INFO - Large raise to 27 with equity 0.93
+2025-03-27 23:00:27,020 - PlayerAgent - INFO - Significant hand completed with reward: 100.0
+2025-03-27 23:00:29,721 - PlayerAgent - INFO - Large raise to 49 with equity 0.94
+2025-03-27 23:00:29,748 - PlayerAgent - INFO - Significant hand completed with reward: 100.0
+2025-03-27 23:00:32,081 - PlayerAgent - INFO - Large raise to 23 with equity 0.97
+2025-03-27 23:00:32,154 - PlayerAgent - INFO - Significant hand completed with reward: 100.0
+2025-03-27 23:00:38,126 - PlayerAgent - INFO - Large raise to 48 with equity 0.94
+2025-03-27 23:00:38,175 - PlayerAgent - INFO - Significant hand completed with reward: -100.0
+2025-03-27 23:00:39,014 - PlayerAgent - INFO - Folding to large bet of 30
+2025-03-27 23:00:39,949 - PlayerAgent - INFO - Significant hand completed with reward: -30.0
+2025-03-27 23:00:40,954 - PlayerAgent - INFO - Large raise to 49 with equity 0.81
+2025-03-27 23:00:40,981 - PlayerAgent - INFO - Significant hand completed with reward: -100.0
+2025-03-27 23:00:41,441 - PlayerAgent - INFO - Folding to large bet of 30
+2025-03-27 23:00:42,763 - PlayerAgent - INFO - Large raise to 23 with equity 0.82
+2025-03-27 23:00:42,833 - PlayerAgent - INFO - Significant hand completed with reward: -100.0
+2025-03-27 23:00:43,816 - PlayerAgent - INFO - Significant hand completed with reward: -30.0
+2025-03-27 23:00:46,267 - PlayerAgent - INFO - Large raise to 49 with equity 1.00
+2025-03-27 23:00:46,292 - PlayerAgent - INFO - Significant hand completed with reward: 100.0
+2025-03-27 23:00:55,633 - PlayerAgent - INFO - Large raise to 27 with equity 0.91
+2025-03-27 23:00:55,723 - PlayerAgent - INFO - Significant hand completed with reward: 100.0
+2025-03-27 23:00:56,360 - PlayerAgent - INFO - Large raise to 23 with equity 0.97
+2025-03-27 23:00:56,430 - PlayerAgent - INFO - Significant hand completed with reward: 100.0
+2025-03-27 23:00:59,937 - PlayerAgent - INFO - Large raise to 49 with equity 0.85
+2025-03-27 23:00:59,964 - PlayerAgent - INFO - Significant hand completed with reward: -100.0
+2025-03-27 23:01:06,467 - PlayerAgent - INFO - Significant hand completed with reward: -30.0
+2025-03-27 23:01:07,400 - PlayerAgent - INFO - Large raise to 27 with equity 1.00
+2025-03-27 23:01:07,502 - PlayerAgent - INFO - Significant hand completed with reward: 100.0
+2025-03-27 23:01:11,789 - PlayerAgent - INFO - Significant hand completed with reward: -30.0
+2025-03-27 23:01:12,838 - PlayerAgent - INFO - Folding to large bet of 30
+2025-03-27 23:01:13,664 - PlayerAgent - INFO - Significant hand completed with reward: -30.0
+2025-03-27 23:01:15,337 - PlayerAgent - INFO - Large raise to 23 with equity 0.91
+2025-03-27 23:01:15,453 - PlayerAgent - INFO - Significant hand completed with reward: 100.0
+2025-03-27 23:01:16,254 - PlayerAgent - INFO - Significant hand completed with reward: -30.0
+2025-03-27 23:42:12,601 - PlayerAgent - INFO - Starting agent server on 0.0.0.0:8000
+2025-03-27 23:42:13,590 - PlayerAgent - ERROR - Bot raised an error during act: 'module' object is not callable. Did you mean: 'random.random(...)'?.
+Traceback (most recent call last):
+  File "/Users/duo/Projects/Untitled/aipoker/agents/agent.py", line 100, in get_bot_action
+    return self.act(observation, reward, terminated, truncated, info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/duo/Projects/Untitled/aipoker/submission/playerModified.py", line 81, in act
+    if random() < 0.75:
+       ^^^^^^^^
+TypeError: 'module' object is not callable. Did you mean: 'random.random(...)'?
+
+2025-03-27 23:42:13,591 - PlayerAgent - ERROR - Error in get_action: 1 validation error for ActionResponse
+action
+  Input should be a valid tuple [type=tuple_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.9/v/tuple_type
+2025-03-27 23:42:14,829 - PlayerAgent - ERROR - Bot raised an error during act: 'module' object is not callable. Did you mean: 'random.random(...)'?.
+Traceback (most recent call last):
+  File "/Users/duo/Projects/Untitled/aipoker/agents/agent.py", line 100, in get_bot_action
+    return self.act(observation, reward, terminated, truncated, info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/duo/Projects/Untitled/aipoker/submission/playerModified.py", line 81, in act
+    if random() < 0.75:
+       ^^^^^^^^
+TypeError: 'module' object is not callable. Did you mean: 'random.random(...)'?
+
+2025-03-27 23:42:14,829 - PlayerAgent - ERROR - Error in get_action: 1 validation error for ActionResponse
+action
+  Input should be a valid tuple [type=tuple_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.9/v/tuple_type
+2025-03-27 23:42:17,057 - PlayerAgent - ERROR - Bot raised an error during act: 'module' object is not callable. Did you mean: 'random.random(...)'?.
+Traceback (most recent call last):
+  File "/Users/duo/Projects/Untitled/aipoker/agents/agent.py", line 100, in get_bot_action
+    return self.act(observation, reward, terminated, truncated, info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/duo/Projects/Untitled/aipoker/submission/playerModified.py", line 81, in act
+    if random() < 0.75:
+       ^^^^^^^^
+TypeError: 'module' object is not callable. Did you mean: 'random.random(...)'?
+
+2025-03-27 23:42:17,057 - PlayerAgent - ERROR - Error in get_action: 1 validation error for ActionResponse
+action
+  Input should be a valid tuple [type=tuple_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.9/v/tuple_type
+2025-03-27 23:42:21,270 - PlayerAgent - ERROR - Bot raised an error during act: 'module' object is not callable. Did you mean: 'random.random(...)'?.
+Traceback (most recent call last):
+  File "/Users/duo/Projects/Untitled/aipoker/agents/agent.py", line 100, in get_bot_action
+    return self.act(observation, reward, terminated, truncated, info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/duo/Projects/Untitled/aipoker/submission/playerModified.py", line 81, in act
+    if random() < 0.75:
+       ^^^^^^^^
+TypeError: 'module' object is not callable. Did you mean: 'random.random(...)'?
+
+2025-03-27 23:42:21,270 - PlayerAgent - ERROR - Error in get_action: 1 validation error for ActionResponse
+action
+  Input should be a valid tuple [type=tuple_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.9/v/tuple_type
+2025-03-27 23:42:29,509 - PlayerAgent - ERROR - Bot raised an error during act: 'module' object is not callable. Did you mean: 'random.random(...)'?.
+Traceback (most recent call last):
+  File "/Users/duo/Projects/Untitled/aipoker/agents/agent.py", line 100, in get_bot_action
+    return self.act(observation, reward, terminated, truncated, info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/duo/Projects/Untitled/aipoker/submission/playerModified.py", line 81, in act
+    if random() < 0.75:
+       ^^^^^^^^
+TypeError: 'module' object is not callable. Did you mean: 'random.random(...)'?
+
+2025-03-27 23:42:29,509 - PlayerAgent - ERROR - Error in get_action: 1 validation error for ActionResponse
+action
+  Input should be a valid tuple [type=tuple_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.9/v/tuple_type
+2025-03-27 23:42:49,692 - PlayerAgent - INFO - Starting agent server on 0.0.0.0:8000
+2025-03-27 23:42:50,647 - PlayerAgent - ERROR - Bot raised an error during act: 'module' object is not callable. Did you mean: 'random.random(...)'?.
+Traceback (most recent call last):
+  File "/Users/duo/Projects/Untitled/aipoker/agents/agent.py", line 100, in get_bot_action
+    return self.act(observation, reward, terminated, truncated, info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/duo/Projects/Untitled/aipoker/submission/playerModified.py", line 81, in act
+    if random() < 0.75:
+       ^^^^^^^^
+TypeError: 'module' object is not callable. Did you mean: 'random.random(...)'?
+
+2025-03-27 23:42:50,648 - PlayerAgent - ERROR - Error in get_action: 1 validation error for ActionResponse
+action
+  Input should be a valid tuple [type=tuple_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.9/v/tuple_type
+2025-03-27 23:42:51,887 - PlayerAgent - ERROR - Bot raised an error during act: 'module' object is not callable. Did you mean: 'random.random(...)'?.
+Traceback (most recent call last):
+  File "/Users/duo/Projects/Untitled/aipoker/agents/agent.py", line 100, in get_bot_action
+    return self.act(observation, reward, terminated, truncated, info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/duo/Projects/Untitled/aipoker/submission/playerModified.py", line 81, in act
+    if random() < 0.75:
+       ^^^^^^^^
+TypeError: 'module' object is not callable. Did you mean: 'random.random(...)'?
+
+2025-03-27 23:42:51,887 - PlayerAgent - ERROR - Error in get_action: 1 validation error for ActionResponse
+action
+  Input should be a valid tuple [type=tuple_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.9/v/tuple_type
+2025-03-27 23:42:54,128 - PlayerAgent - ERROR - Bot raised an error during act: 'module' object is not callable. Did you mean: 'random.random(...)'?.
+Traceback (most recent call last):
+  File "/Users/duo/Projects/Untitled/aipoker/agents/agent.py", line 100, in get_bot_action
+    return self.act(observation, reward, terminated, truncated, info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/duo/Projects/Untitled/aipoker/submission/playerModified.py", line 81, in act
+    if random() < 0.75:
+       ^^^^^^^^
+TypeError: 'module' object is not callable. Did you mean: 'random.random(...)'?
+
+2025-03-27 23:42:54,128 - PlayerAgent - ERROR - Error in get_action: 1 validation error for ActionResponse
+action
+  Input should be a valid tuple [type=tuple_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.9/v/tuple_type
+2025-03-27 23:42:58,369 - PlayerAgent - ERROR - Bot raised an error during act: 'module' object is not callable. Did you mean: 'random.random(...)'?.
+Traceback (most recent call last):
+  File "/Users/duo/Projects/Untitled/aipoker/agents/agent.py", line 100, in get_bot_action
+    return self.act(observation, reward, terminated, truncated, info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/duo/Projects/Untitled/aipoker/submission/playerModified.py", line 81, in act
+    if random() < 0.75:
+       ^^^^^^^^
+TypeError: 'module' object is not callable. Did you mean: 'random.random(...)'?
+
+2025-03-27 23:42:58,370 - PlayerAgent - ERROR - Error in get_action: 1 validation error for ActionResponse
+action
+  Input should be a valid tuple [type=tuple_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.9/v/tuple_type
+2025-03-27 23:43:06,604 - PlayerAgent - ERROR - Bot raised an error during act: 'module' object is not callable. Did you mean: 'random.random(...)'?.
+Traceback (most recent call last):
+  File "/Users/duo/Projects/Untitled/aipoker/agents/agent.py", line 100, in get_bot_action
+    return self.act(observation, reward, terminated, truncated, info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/duo/Projects/Untitled/aipoker/submission/playerModified.py", line 81, in act
+    if random() < 0.75:
+       ^^^^^^^^
+TypeError: 'module' object is not callable. Did you mean: 'random.random(...)'?
+
+2025-03-27 23:43:06,604 - PlayerAgent - ERROR - Error in get_action: 1 validation error for ActionResponse
+action
+  Input should be a valid tuple [type=tuple_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.9/v/tuple_type
+2025-03-27 23:43:11,131 - PlayerAgent - INFO - Starting agent server on 0.0.0.0:8000
+2025-03-27 23:43:11,652 - PlayerAgent - ERROR - Bot raised an error during act: 'builtin_function_or_method' object has no attribute 'sample'.
+Traceback (most recent call last):
+  File "/Users/duo/Projects/Untitled/aipoker/agents/agent.py", line 100, in get_bot_action
+    return self.act(observation, reward, terminated, truncated, info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/duo/Projects/Untitled/aipoker/submission/playerModified.py", line 47, in act
+    wins = sum(
+           ^^^^
+  File "/Users/duo/Projects/Untitled/aipoker/submission/playerModified.py", line 50, in <genexpr>
+    if (drawn_cards := random.sample(non_shown_cards, 7 - len(community_cards) - len(opp_drawn_card)))
+                       ^^^^^^^^^^^^^
+AttributeError: 'builtin_function_or_method' object has no attribute 'sample'
+
+2025-03-27 23:43:11,653 - PlayerAgent - ERROR - Error in get_action: 1 validation error for ActionResponse
+action
+  Input should be a valid tuple [type=tuple_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.9/v/tuple_type
+2025-03-27 23:43:13,662 - PlayerAgent - ERROR - Bot raised an error during act: 'builtin_function_or_method' object has no attribute 'sample'.
+Traceback (most recent call last):
+  File "/Users/duo/Projects/Untitled/aipoker/agents/agent.py", line 100, in get_bot_action
+    return self.act(observation, reward, terminated, truncated, info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/duo/Projects/Untitled/aipoker/submission/playerModified.py", line 47, in act
+    wins = sum(
+           ^^^^
+  File "/Users/duo/Projects/Untitled/aipoker/submission/playerModified.py", line 50, in <genexpr>
+    if (drawn_cards := random.sample(non_shown_cards, 7 - len(community_cards) - len(opp_drawn_card)))
+                       ^^^^^^^^^^^^^
+AttributeError: 'builtin_function_or_method' object has no attribute 'sample'
+
+2025-03-27 23:43:13,662 - PlayerAgent - ERROR - Error in get_action: 1 validation error for ActionResponse
+action
+  Input should be a valid tuple [type=tuple_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.9/v/tuple_type
+2025-03-27 23:43:17,671 - PlayerAgent - ERROR - Bot raised an error during act: 'builtin_function_or_method' object has no attribute 'sample'.
+Traceback (most recent call last):
+  File "/Users/duo/Projects/Untitled/aipoker/agents/agent.py", line 100, in get_bot_action
+    return self.act(observation, reward, terminated, truncated, info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/duo/Projects/Untitled/aipoker/submission/playerModified.py", line 47, in act
+    wins = sum(
+           ^^^^
+  File "/Users/duo/Projects/Untitled/aipoker/submission/playerModified.py", line 50, in <genexpr>
+    if (drawn_cards := random.sample(non_shown_cards, 7 - len(community_cards) - len(opp_drawn_card)))
+                       ^^^^^^^^^^^^^
+AttributeError: 'builtin_function_or_method' object has no attribute 'sample'
+
+2025-03-27 23:43:17,671 - PlayerAgent - ERROR - Error in get_action: 1 validation error for ActionResponse
+action
+  Input should be a valid tuple [type=tuple_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.9/v/tuple_type
+2025-03-27 23:43:25,678 - PlayerAgent - ERROR - Bot raised an error during act: 'builtin_function_or_method' object has no attribute 'sample'.
+Traceback (most recent call last):
+  File "/Users/duo/Projects/Untitled/aipoker/agents/agent.py", line 100, in get_bot_action
+    return self.act(observation, reward, terminated, truncated, info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/duo/Projects/Untitled/aipoker/submission/playerModified.py", line 47, in act
+    wins = sum(
+           ^^^^
+  File "/Users/duo/Projects/Untitled/aipoker/submission/playerModified.py", line 50, in <genexpr>
+    if (drawn_cards := random.sample(non_shown_cards, 7 - len(community_cards) - len(opp_drawn_card)))
+                       ^^^^^^^^^^^^^
+AttributeError: 'builtin_function_or_method' object has no attribute 'sample'
+
+2025-03-27 23:43:25,678 - PlayerAgent - ERROR - Error in get_action: 1 validation error for ActionResponse
+action
+  Input should be a valid tuple [type=tuple_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.9/v/tuple_type
+2025-03-27 23:44:01,641 - PlayerAgent - INFO - Starting agent server on 0.0.0.0:8000
+2025-03-27 23:44:03,982 - PlayerAgent - ERROR - Bot raised an error during act: Random.random() takes no arguments (2 given).
+Traceback (most recent call last):
+  File "/Users/duo/Projects/Untitled/aipoker/agents/agent.py", line 100, in get_bot_action
+    return self.act(observation, reward, terminated, truncated, info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/duo/Projects/Untitled/aipoker/submission/playerModified.py", line 73, in act
+    raise_amount = min(int(pot_size * random.random(equity/2, equity*1.5)), observation["max_raise"])
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Random.random() takes no arguments (2 given)
+
+2025-03-27 23:44:03,982 - PlayerAgent - ERROR - Error in get_action: 1 validation error for ActionResponse
+action
+  Input should be a valid tuple [type=tuple_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.9/v/tuple_type
+2025-03-27 23:44:05,218 - PlayerAgent - ERROR - Bot raised an error during act: Random.random() takes no arguments (2 given).
+Traceback (most recent call last):
+  File "/Users/duo/Projects/Untitled/aipoker/agents/agent.py", line 100, in get_bot_action
+    return self.act(observation, reward, terminated, truncated, info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/duo/Projects/Untitled/aipoker/submission/playerModified.py", line 73, in act
+    raise_amount = min(int(pot_size * random.random(equity/2, equity*1.5)), observation["max_raise"])
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Random.random() takes no arguments (2 given)
+
+2025-03-27 23:44:05,218 - PlayerAgent - ERROR - Error in get_action: 1 validation error for ActionResponse
+action
+  Input should be a valid tuple [type=tuple_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.9/v/tuple_type
+2025-03-27 23:44:07,451 - PlayerAgent - ERROR - Bot raised an error during act: Random.random() takes no arguments (2 given).
+Traceback (most recent call last):
+  File "/Users/duo/Projects/Untitled/aipoker/agents/agent.py", line 100, in get_bot_action
+    return self.act(observation, reward, terminated, truncated, info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/duo/Projects/Untitled/aipoker/submission/playerModified.py", line 73, in act
+    raise_amount = min(int(pot_size * random.random(equity/2, equity*1.5)), observation["max_raise"])
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Random.random() takes no arguments (2 given)
+
+2025-03-27 23:44:07,452 - PlayerAgent - ERROR - Error in get_action: 1 validation error for ActionResponse
+action
+  Input should be a valid tuple [type=tuple_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.9/v/tuple_type
+2025-03-27 23:44:12,349 - PlayerAgent - ERROR - Bot raised an error during act: Random.random() takes no arguments (2 given).
+Traceback (most recent call last):
+  File "/Users/duo/Projects/Untitled/aipoker/agents/agent.py", line 100, in get_bot_action
+    return self.act(observation, reward, terminated, truncated, info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/duo/Projects/Untitled/aipoker/submission/playerModified.py", line 84, in act
+    raise_amount = min(int(pot_size * random.random(0.5, 1.5)), observation["max_raise"])
+                                      ^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Random.random() takes no arguments (2 given)
+
+2025-03-27 23:44:12,349 - PlayerAgent - ERROR - Error in get_action: 1 validation error for ActionResponse
+action
+  Input should be a valid tuple [type=tuple_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.9/v/tuple_type
+2025-03-27 23:44:13,584 - PlayerAgent - ERROR - Bot raised an error during act: Random.random() takes no arguments (2 given).
+Traceback (most recent call last):
+  File "/Users/duo/Projects/Untitled/aipoker/agents/agent.py", line 100, in get_bot_action
+    return self.act(observation, reward, terminated, truncated, info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/duo/Projects/Untitled/aipoker/submission/playerModified.py", line 84, in act
+    raise_amount = min(int(pot_size * random.random(0.5, 1.5)), observation["max_raise"])
+                                      ^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Random.random() takes no arguments (2 given)
+
+2025-03-27 23:44:13,584 - PlayerAgent - ERROR - Error in get_action: 1 validation error for ActionResponse
+action
+  Input should be a valid tuple [type=tuple_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.9/v/tuple_type
+2025-03-27 23:44:16,295 - PlayerAgent - ERROR - Bot raised an error during act: Random.random() takes no arguments (2 given).
+Traceback (most recent call last):
+  File "/Users/duo/Projects/Untitled/aipoker/agents/agent.py", line 100, in get_bot_action
+    return self.act(observation, reward, terminated, truncated, info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/duo/Projects/Untitled/aipoker/submission/playerModified.py", line 84, in act
+    raise_amount = min(int(pot_size * random.random(0.5, 1.5)), observation["max_raise"])
+                                      ^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Random.random() takes no arguments (2 given)
+
+2025-03-27 23:44:16,296 - PlayerAgent - ERROR - Error in get_action: 1 validation error for ActionResponse
+action
+  Input should be a valid tuple [type=tuple_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.9/v/tuple_type
+2025-03-27 23:44:17,765 - PlayerAgent - ERROR - Bot raised an error during act: Random.random() takes no arguments (2 given).
+Traceback (most recent call last):
+  File "/Users/duo/Projects/Untitled/aipoker/agents/agent.py", line 100, in get_bot_action
+    return self.act(observation, reward, terminated, truncated, info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/duo/Projects/Untitled/aipoker/submission/playerModified.py", line 84, in act
+    raise_amount = min(int(pot_size * random.random(0.5, 1.5)), observation["max_raise"])
+                                      ^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Random.random() takes no arguments (2 given)
+
+2025-03-27 23:44:17,766 - PlayerAgent - ERROR - Error in get_action: 1 validation error for ActionResponse
+action
+  Input should be a valid tuple [type=tuple_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.9/v/tuple_type
+2025-03-27 23:44:19,439 - PlayerAgent - ERROR - Bot raised an error during act: Random.random() takes no arguments (2 given).
+Traceback (most recent call last):
+  File "/Users/duo/Projects/Untitled/aipoker/agents/agent.py", line 100, in get_bot_action
+    return self.act(observation, reward, terminated, truncated, info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/duo/Projects/Untitled/aipoker/submission/playerModified.py", line 84, in act
+    raise_amount = min(int(pot_size * random.random(0.5, 1.5)), observation["max_raise"])
+                                      ^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Random.random() takes no arguments (2 given)
+
+2025-03-27 23:44:19,439 - PlayerAgent - ERROR - Error in get_action: 1 validation error for ActionResponse
+action
+  Input should be a valid tuple [type=tuple_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.9/v/tuple_type
+2025-03-27 23:44:20,672 - PlayerAgent - ERROR - Bot raised an error during act: Random.random() takes no arguments (2 given).
+Traceback (most recent call last):
+  File "/Users/duo/Projects/Untitled/aipoker/agents/agent.py", line 100, in get_bot_action
+    return self.act(observation, reward, terminated, truncated, info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/duo/Projects/Untitled/aipoker/submission/playerModified.py", line 84, in act
+    raise_amount = min(int(pot_size * random.random(0.5, 1.5)), observation["max_raise"])
+                                      ^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Random.random() takes no arguments (2 given)
+
+2025-03-27 23:44:20,672 - PlayerAgent - ERROR - Error in get_action: 1 validation error for ActionResponse
+action
+  Input should be a valid tuple [type=tuple_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.9/v/tuple_type
+2025-03-27 23:44:25,829 - PlayerAgent - ERROR - Bot raised an error during act: Random.random() takes no arguments (2 given).
+Traceback (most recent call last):
+  File "/Users/duo/Projects/Untitled/aipoker/agents/agent.py", line 100, in get_bot_action
+    return self.act(observation, reward, terminated, truncated, info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/duo/Projects/Untitled/aipoker/submission/playerModified.py", line 84, in act
+    raise_amount = min(int(pot_size * random.random(0.5, 1.5)), observation["max_raise"])
+                                      ^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Random.random() takes no arguments (2 given)
+
+2025-03-27 23:44:25,829 - PlayerAgent - ERROR - Error in get_action: 1 validation error for ActionResponse
+action
+  Input should be a valid tuple [type=tuple_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.9/v/tuple_type
+2025-03-27 23:44:27,299 - PlayerAgent - ERROR - Bot raised an error during act: Random.random() takes no arguments (2 given).
+Traceback (most recent call last):
+  File "/Users/duo/Projects/Untitled/aipoker/agents/agent.py", line 100, in get_bot_action
+    return self.act(observation, reward, terminated, truncated, info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/duo/Projects/Untitled/aipoker/submission/playerModified.py", line 73, in act
+    raise_amount = min(int(pot_size * random.random(equity/2, equity*1.5)), observation["max_raise"])
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Random.random() takes no arguments (2 given)
+
+2025-03-27 23:44:27,300 - PlayerAgent - ERROR - Error in get_action: 1 validation error for ActionResponse
+action
+  Input should be a valid tuple [type=tuple_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.9/v/tuple_type
+2025-03-27 23:44:28,539 - PlayerAgent - ERROR - Bot raised an error during act: Random.random() takes no arguments (2 given).
+Traceback (most recent call last):
+  File "/Users/duo/Projects/Untitled/aipoker/agents/agent.py", line 100, in get_bot_action
+    return self.act(observation, reward, terminated, truncated, info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/duo/Projects/Untitled/aipoker/submission/playerModified.py", line 73, in act
+    raise_amount = min(int(pot_size * random.random(equity/2, equity*1.5)), observation["max_raise"])
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Random.random() takes no arguments (2 given)
+
+2025-03-27 23:44:28,540 - PlayerAgent - ERROR - Error in get_action: 1 validation error for ActionResponse
+action
+  Input should be a valid tuple [type=tuple_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.9/v/tuple_type
+2025-03-27 23:44:31,041 - PlayerAgent - ERROR - Bot raised an error during act: Random.random() takes no arguments (2 given).
+Traceback (most recent call last):
+  File "/Users/duo/Projects/Untitled/aipoker/agents/agent.py", line 100, in get_bot_action
+    return self.act(observation, reward, terminated, truncated, info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/duo/Projects/Untitled/aipoker/submission/playerModified.py", line 84, in act
+    raise_amount = min(int(pot_size * random.random(0.5, 1.5)), observation["max_raise"])
+                                      ^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Random.random() takes no arguments (2 given)
+
+2025-03-27 23:44:31,041 - PlayerAgent - ERROR - Error in get_action: 1 validation error for ActionResponse
+action
+  Input should be a valid tuple [type=tuple_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.9/v/tuple_type
+2025-03-27 23:44:33,934 - PlayerAgent - ERROR - Bot raised an error during act: Random.random() takes no arguments (2 given).
+Traceback (most recent call last):
+  File "/Users/duo/Projects/Untitled/aipoker/agents/agent.py", line 100, in get_bot_action
+    return self.act(observation, reward, terminated, truncated, info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/duo/Projects/Untitled/aipoker/submission/playerModified.py", line 73, in act
+    raise_amount = min(int(pot_size * random.random(equity/2, equity*1.5)), observation["max_raise"])
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Random.random() takes no arguments (2 given)
+
+2025-03-27 23:44:33,934 - PlayerAgent - ERROR - Error in get_action: 1 validation error for ActionResponse
+action
+  Input should be a valid tuple [type=tuple_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.9/v/tuple_type
+2025-03-27 23:44:35,175 - PlayerAgent - ERROR - Bot raised an error during act: Random.random() takes no arguments (2 given).
+Traceback (most recent call last):
+  File "/Users/duo/Projects/Untitled/aipoker/agents/agent.py", line 100, in get_bot_action
+    return self.act(observation, reward, terminated, truncated, info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/duo/Projects/Untitled/aipoker/submission/playerModified.py", line 84, in act
+    raise_amount = min(int(pot_size * random.random(0.5, 1.5)), observation["max_raise"])
+                                      ^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Random.random() takes no arguments (2 given)
+
+2025-03-27 23:44:35,176 - PlayerAgent - ERROR - Error in get_action: 1 validation error for ActionResponse
+action
+  Input should be a valid tuple [type=tuple_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.9/v/tuple_type
+2025-03-27 23:44:39,786 - PlayerAgent - ERROR - Bot raised an error during act: Random.random() takes no arguments (2 given).
+Traceback (most recent call last):
+  File "/Users/duo/Projects/Untitled/aipoker/agents/agent.py", line 100, in get_bot_action
+    return self.act(observation, reward, terminated, truncated, info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/duo/Projects/Untitled/aipoker/submission/playerModified.py", line 73, in act
+    raise_amount = min(int(pot_size * random.random(equity/2, equity*1.5)), observation["max_raise"])
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Random.random() takes no arguments (2 given)
+
+2025-03-27 23:44:39,786 - PlayerAgent - ERROR - Error in get_action: 1 validation error for ActionResponse
+action
+  Input should be a valid tuple [type=tuple_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.9/v/tuple_type
+2025-03-27 23:44:41,008 - PlayerAgent - ERROR - Bot raised an error during act: Random.random() takes no arguments (2 given).
+Traceback (most recent call last):
+  File "/Users/duo/Projects/Untitled/aipoker/agents/agent.py", line 100, in get_bot_action
+    return self.act(observation, reward, terminated, truncated, info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/duo/Projects/Untitled/aipoker/submission/playerModified.py", line 73, in act
+    raise_amount = min(int(pot_size * random.random(equity/2, equity*1.5)), observation["max_raise"])
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Random.random() takes no arguments (2 given)
+
+2025-03-27 23:44:41,008 - PlayerAgent - ERROR - Error in get_action: 1 validation error for ActionResponse
+action
+  Input should be a valid tuple [type=tuple_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.9/v/tuple_type
+2025-03-27 23:44:43,244 - PlayerAgent - ERROR - Bot raised an error during act: Random.random() takes no arguments (2 given).
+Traceback (most recent call last):
+  File "/Users/duo/Projects/Untitled/aipoker/agents/agent.py", line 100, in get_bot_action
+    return self.act(observation, reward, terminated, truncated, info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/duo/Projects/Untitled/aipoker/submission/playerModified.py", line 73, in act
+    raise_amount = min(int(pot_size * random.random(equity/2, equity*1.5)), observation["max_raise"])
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Random.random() takes no arguments (2 given)
+
+2025-03-27 23:44:43,244 - PlayerAgent - ERROR - Error in get_action: 1 validation error for ActionResponse
+action
+  Input should be a valid tuple [type=tuple_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.9/v/tuple_type
+2025-03-27 23:44:47,471 - PlayerAgent - ERROR - Bot raised an error during act: Random.random() takes no arguments (2 given).
+Traceback (most recent call last):
+  File "/Users/duo/Projects/Untitled/aipoker/agents/agent.py", line 100, in get_bot_action
+    return self.act(observation, reward, terminated, truncated, info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/duo/Projects/Untitled/aipoker/submission/playerModified.py", line 73, in act
+    raise_amount = min(int(pot_size * random.random(equity/2, equity*1.5)), observation["max_raise"])
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Random.random() takes no arguments (2 given)
+
+2025-03-27 23:44:47,471 - PlayerAgent - ERROR - Error in get_action: 1 validation error for ActionResponse
+action
+  Input should be a valid tuple [type=tuple_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.9/v/tuple_type
+2025-03-27 23:44:55,704 - PlayerAgent - ERROR - Bot raised an error during act: Random.random() takes no arguments (2 given).
+Traceback (most recent call last):
+  File "/Users/duo/Projects/Untitled/aipoker/agents/agent.py", line 100, in get_bot_action
+    return self.act(observation, reward, terminated, truncated, info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/duo/Projects/Untitled/aipoker/submission/playerModified.py", line 73, in act
+    raise_amount = min(int(pot_size * random.random(equity/2, equity*1.5)), observation["max_raise"])
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Random.random() takes no arguments (2 given)
+
+2025-03-27 23:44:55,704 - PlayerAgent - ERROR - Error in get_action: 1 validation error for ActionResponse
+action
+  Input should be a valid tuple [type=tuple_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.9/v/tuple_type
+2025-03-27 23:45:20,247 - PlayerAgent - INFO - Starting agent server on 0.0.0.0:8000
+2025-03-27 23:45:21,664 - PlayerAgent - ERROR - Bot raised an error during act: 'float' object cannot be interpreted as an integer.
+Traceback (most recent call last):
+  File "/Users/duo/Projects/Untitled/aipoker/agents/agent.py", line 100, in get_bot_action
+    return self.act(observation, reward, terminated, truncated, info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/duo/Projects/Untitled/aipoker/submission/playerModified.py", line 84, in act
+    raise_amount = min(int(pot_size * random.randrange(0.5, 1.5)), observation["max_raise"])
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/random.py", line 301, in randrange
+    istart = _index(start)
+             ^^^^^^^^^^^^^
+TypeError: 'float' object cannot be interpreted as an integer
+
+2025-03-27 23:45:21,664 - PlayerAgent - ERROR - Error in get_action: 1 validation error for ActionResponse
+action
+  Input should be a valid tuple [type=tuple_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.9/v/tuple_type
+2025-03-27 23:45:23,835 - PlayerAgent - ERROR - Bot raised an error during act: 'float' object cannot be interpreted as an integer.
+Traceback (most recent call last):
+  File "/Users/duo/Projects/Untitled/aipoker/agents/agent.py", line 100, in get_bot_action
+    return self.act(observation, reward, terminated, truncated, info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/duo/Projects/Untitled/aipoker/submission/playerModified.py", line 84, in act
+    raise_amount = min(int(pot_size * random.randrange(0.5, 1.5)), observation["max_raise"])
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/random.py", line 301, in randrange
+    istart = _index(start)
+             ^^^^^^^^^^^^^
+TypeError: 'float' object cannot be interpreted as an integer
+
+2025-03-27 23:45:23,836 - PlayerAgent - ERROR - Error in get_action: 1 validation error for ActionResponse
+action
+  Input should be a valid tuple [type=tuple_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.9/v/tuple_type
+2025-03-27 23:45:25,745 - PlayerAgent - ERROR - Bot raised an error during act: 'float' object cannot be interpreted as an integer.
+Traceback (most recent call last):
+  File "/Users/duo/Projects/Untitled/aipoker/agents/agent.py", line 100, in get_bot_action
+    return self.act(observation, reward, terminated, truncated, info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/duo/Projects/Untitled/aipoker/submission/playerModified.py", line 73, in act
+    raise_amount = min(int(pot_size * random.randrange(equity/2, equity*1.5)), observation["max_raise"])
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/random.py", line 301, in randrange
+    istart = _index(start)
+             ^^^^^^^^^^^^^
+TypeError: 'float' object cannot be interpreted as an integer
+
+2025-03-27 23:45:25,745 - PlayerAgent - ERROR - Error in get_action: 1 validation error for ActionResponse
+action
+  Input should be a valid tuple [type=tuple_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.9/v/tuple_type
+2025-03-27 23:45:27,439 - PlayerAgent - ERROR - Bot raised an error during act: 'float' object cannot be interpreted as an integer.
+Traceback (most recent call last):
+  File "/Users/duo/Projects/Untitled/aipoker/agents/agent.py", line 100, in get_bot_action
+    return self.act(observation, reward, terminated, truncated, info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/duo/Projects/Untitled/aipoker/submission/playerModified.py", line 73, in act
+    raise_amount = min(int(pot_size * random.randrange(equity/2, equity*1.5)), observation["max_raise"])
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/random.py", line 301, in randrange
+    istart = _index(start)
+             ^^^^^^^^^^^^^
+TypeError: 'float' object cannot be interpreted as an integer
+
+2025-03-27 23:45:27,439 - PlayerAgent - ERROR - Error in get_action: 1 validation error for ActionResponse
+action
+  Input should be a valid tuple [type=tuple_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.9/v/tuple_type
+2025-03-27 23:45:31,219 - PlayerAgent - ERROR - Bot raised an error during act: 'float' object cannot be interpreted as an integer.
+Traceback (most recent call last):
+  File "/Users/duo/Projects/Untitled/aipoker/agents/agent.py", line 100, in get_bot_action
+    return self.act(observation, reward, terminated, truncated, info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/duo/Projects/Untitled/aipoker/submission/playerModified.py", line 84, in act
+    raise_amount = min(int(pot_size * random.randrange(0.5, 1.5)), observation["max_raise"])
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/random.py", line 301, in randrange
+    istart = _index(start)
+             ^^^^^^^^^^^^^
+TypeError: 'float' object cannot be interpreted as an integer
+
+2025-03-27 23:45:31,219 - PlayerAgent - ERROR - Error in get_action: 1 validation error for ActionResponse
+action
+  Input should be a valid tuple [type=tuple_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.9/v/tuple_type
+2025-03-27 23:45:32,460 - PlayerAgent - ERROR - Bot raised an error during act: 'float' object cannot be interpreted as an integer.
+Traceback (most recent call last):
+  File "/Users/duo/Projects/Untitled/aipoker/agents/agent.py", line 100, in get_bot_action
+    return self.act(observation, reward, terminated, truncated, info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/duo/Projects/Untitled/aipoker/submission/playerModified.py", line 84, in act
+    raise_amount = min(int(pot_size * random.randrange(0.5, 1.5)), observation["max_raise"])
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/random.py", line 301, in randrange
+    istart = _index(start)
+             ^^^^^^^^^^^^^
+TypeError: 'float' object cannot be interpreted as an integer
+
+2025-03-27 23:45:32,460 - PlayerAgent - ERROR - Error in get_action: 1 validation error for ActionResponse
+action
+  Input should be a valid tuple [type=tuple_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.9/v/tuple_type
+2025-03-27 23:45:35,617 - PlayerAgent - ERROR - Bot raised an error during act: 'float' object cannot be interpreted as an integer.
+Traceback (most recent call last):
+  File "/Users/duo/Projects/Untitled/aipoker/agents/agent.py", line 100, in get_bot_action
+    return self.act(observation, reward, terminated, truncated, info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/duo/Projects/Untitled/aipoker/submission/playerModified.py", line 73, in act
+    raise_amount = min(int(pot_size * random.randrange(equity/2, equity*1.5)), observation["max_raise"])
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/random.py", line 301, in randrange
+    istart = _index(start)
+             ^^^^^^^^^^^^^
+TypeError: 'float' object cannot be interpreted as an integer
+
+2025-03-27 23:45:35,617 - PlayerAgent - ERROR - Error in get_action: 1 validation error for ActionResponse
+action
+  Input should be a valid tuple [type=tuple_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.9/v/tuple_type
+2025-03-27 23:45:36,856 - PlayerAgent - ERROR - Bot raised an error during act: 'float' object cannot be interpreted as an integer.
+Traceback (most recent call last):
+  File "/Users/duo/Projects/Untitled/aipoker/agents/agent.py", line 100, in get_bot_action
+    return self.act(observation, reward, terminated, truncated, info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/duo/Projects/Untitled/aipoker/submission/playerModified.py", line 73, in act
+    raise_amount = min(int(pot_size * random.randrange(equity/2, equity*1.5)), observation["max_raise"])
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/random.py", line 301, in randrange
+    istart = _index(start)
+             ^^^^^^^^^^^^^
+TypeError: 'float' object cannot be interpreted as an integer
+
+2025-03-27 23:45:36,857 - PlayerAgent - ERROR - Error in get_action: 1 validation error for ActionResponse
+action
+  Input should be a valid tuple [type=tuple_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.9/v/tuple_type
+2025-03-27 23:45:39,305 - PlayerAgent - ERROR - Bot raised an error during act: 'float' object cannot be interpreted as an integer.
+Traceback (most recent call last):
+  File "/Users/duo/Projects/Untitled/aipoker/agents/agent.py", line 100, in get_bot_action
+    return self.act(observation, reward, terminated, truncated, info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/duo/Projects/Untitled/aipoker/submission/playerModified.py", line 73, in act
+    raise_amount = min(int(pot_size * random.randrange(equity/2, equity*1.5)), observation["max_raise"])
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/random.py", line 301, in randrange
+    istart = _index(start)
+             ^^^^^^^^^^^^^
+TypeError: 'float' object cannot be interpreted as an integer
+
+2025-03-27 23:45:39,305 - PlayerAgent - ERROR - Error in get_action: 1 validation error for ActionResponse
+action
+  Input should be a valid tuple [type=tuple_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.9/v/tuple_type
+2025-03-27 23:45:40,520 - PlayerAgent - ERROR - Bot raised an error during act: 'float' object cannot be interpreted as an integer.
+Traceback (most recent call last):
+  File "/Users/duo/Projects/Untitled/aipoker/agents/agent.py", line 100, in get_bot_action
+    return self.act(observation, reward, terminated, truncated, info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/duo/Projects/Untitled/aipoker/submission/playerModified.py", line 73, in act
+    raise_amount = min(int(pot_size * random.randrange(equity/2, equity*1.5)), observation["max_raise"])
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/random.py", line 301, in randrange
+    istart = _index(start)
+             ^^^^^^^^^^^^^
+TypeError: 'float' object cannot be interpreted as an integer
+
+2025-03-27 23:45:40,520 - PlayerAgent - ERROR - Error in get_action: 1 validation error for ActionResponse
+action
+  Input should be a valid tuple [type=tuple_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.9/v/tuple_type
+2025-03-27 23:45:42,750 - PlayerAgent - ERROR - Bot raised an error during act: 'float' object cannot be interpreted as an integer.
+Traceback (most recent call last):
+  File "/Users/duo/Projects/Untitled/aipoker/agents/agent.py", line 100, in get_bot_action
+    return self.act(observation, reward, terminated, truncated, info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/duo/Projects/Untitled/aipoker/submission/playerModified.py", line 84, in act
+    raise_amount = min(int(pot_size * random.randrange(0.5, 1.5)), observation["max_raise"])
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/random.py", line 301, in randrange
+    istart = _index(start)
+             ^^^^^^^^^^^^^
+TypeError: 'float' object cannot be interpreted as an integer
+
+2025-03-27 23:45:42,750 - PlayerAgent - ERROR - Error in get_action: 1 validation error for ActionResponse
+action
+  Input should be a valid tuple [type=tuple_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.9/v/tuple_type
+2025-03-27 23:45:46,979 - PlayerAgent - ERROR - Bot raised an error during act: 'float' object cannot be interpreted as an integer.
+Traceback (most recent call last):
+  File "/Users/duo/Projects/Untitled/aipoker/agents/agent.py", line 100, in get_bot_action
+    return self.act(observation, reward, terminated, truncated, info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/duo/Projects/Untitled/aipoker/submission/playerModified.py", line 73, in act
+    raise_amount = min(int(pot_size * random.randrange(equity/2, equity*1.5)), observation["max_raise"])
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/random.py", line 301, in randrange
+    istart = _index(start)
+             ^^^^^^^^^^^^^
+TypeError: 'float' object cannot be interpreted as an integer
+
+2025-03-27 23:45:46,979 - PlayerAgent - ERROR - Error in get_action: 1 validation error for ActionResponse
+action
+  Input should be a valid tuple [type=tuple_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.9/v/tuple_type
+2025-03-27 23:45:55,207 - PlayerAgent - ERROR - Bot raised an error during act: 'float' object cannot be interpreted as an integer.
+Traceback (most recent call last):
+  File "/Users/duo/Projects/Untitled/aipoker/agents/agent.py", line 100, in get_bot_action
+    return self.act(observation, reward, terminated, truncated, info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/duo/Projects/Untitled/aipoker/submission/playerModified.py", line 73, in act
+    raise_amount = min(int(pot_size * random.randrange(equity/2, equity*1.5)), observation["max_raise"])
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/random.py", line 301, in randrange
+    istart = _index(start)
+             ^^^^^^^^^^^^^
+TypeError: 'float' object cannot be interpreted as an integer
+
+2025-03-27 23:45:55,207 - PlayerAgent - ERROR - Error in get_action: 1 validation error for ActionResponse
+action
+  Input should be a valid tuple [type=tuple_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.9/v/tuple_type
+2025-03-27 23:46:24,073 - PlayerAgent - INFO - Starting agent server on 0.0.0.0:8000
+2025-03-27 23:46:51,210 - PlayerAgent - INFO - Significant hand completed with reward: 21.0
+2025-03-27 23:47:10,322 - PlayerAgent - INFO - Starting agent server on 0.0.0.0:8000
+2025-03-27 23:47:11,246 - PlayerAgent - INFO - Significant hand completed with reward: 32.0
+2025-03-27 23:47:12,258 - PlayerAgent - INFO - Large raise to 36 with equity 0.96
+2025-03-27 23:47:12,308 - PlayerAgent - INFO - Significant hand completed with reward: 100.0
+2025-03-27 23:47:12,565 - PlayerAgent - INFO - Significant hand completed with reward: -33.0
+2025-03-27 23:47:14,276 - PlayerAgent - INFO - Large raise to 25 with equity 0.71
+2025-03-27 23:47:16,054 - PlayerAgent - INFO - Significant hand completed with reward: -30.0
+2025-03-27 23:47:17,766 - PlayerAgent - INFO - Significant hand completed with reward: -58.0
+2025-03-27 23:47:18,875 - PlayerAgent - INFO - Significant hand completed with reward: 48.0
+2025-03-27 23:47:21,108 - PlayerAgent - INFO - Significant hand completed with reward: -21.0
+2025-03-27 23:47:24,447 - PlayerAgent - INFO - Folding to large bet of 59
+2025-03-27 23:47:24,450 - PlayerAgent - INFO - Significant hand completed with reward: -29.0
+2025-03-27 23:47:25,287 - PlayerAgent - INFO - Large raise to 26 with equity 0.92
+2025-03-27 23:47:25,332 - PlayerAgent - INFO - Large raise to 25 with equity 0.96
+2025-03-27 23:47:25,358 - PlayerAgent - INFO - Significant hand completed with reward: -100.0
+2025-03-27 23:47:25,610 - PlayerAgent - INFO - Folding to large bet of 62
+2025-03-27 23:47:25,613 - PlayerAgent - INFO - Significant hand completed with reward: -25.0
+2025-03-27 23:47:28,472 - PlayerAgent - INFO - Folding to large bet of 35
+2025-03-27 23:47:29,353 - PlayerAgent - INFO - Large raise to 21 with equity 1.02
+2025-03-27 23:47:29,404 - PlayerAgent - INFO - Large raise to 26 with equity 1.14
+2025-03-27 23:47:29,433 - PlayerAgent - INFO - Significant hand completed with reward: 100.0
+2025-03-27 23:47:37,709 - PlayerAgent - INFO - Significant hand completed with reward: -26.0
+2025-03-27 23:47:39,179 - PlayerAgent - INFO - Significant hand completed with reward: 68.0
+2025-03-27 23:47:43,464 - PlayerAgent - INFO - Significant hand completed with reward: -25.0
+2025-03-27 23:47:43,722 - PlayerAgent - INFO - Folding to large bet of 100
+2025-03-27 23:47:43,732 - PlayerAgent - INFO - Significant hand completed with reward: -44.0
+2025-03-27 23:47:45,082 - PlayerAgent - INFO - Significant hand completed with reward: 23.0
+2025-03-27 23:47:45,334 - PlayerAgent - INFO - Large raise to 29 with equity 0.88
+2025-03-27 23:47:45,414 - PlayerAgent - INFO - Significant hand completed with reward: 100.0
+2025-03-27 23:47:46,011 - PlayerAgent - INFO - Large raise to 53 with equity 0.77
+2025-03-27 23:47:49,385 - PlayerAgent - INFO - Large raise to 42 with equity 1.03
+2025-03-27 23:47:49,414 - PlayerAgent - INFO - Significant hand completed with reward: 60.0
+2025-03-27 23:47:49,622 - PlayerAgent - INFO - Significant hand completed with reward: -30.0
+2025-03-27 23:47:49,884 - PlayerAgent - INFO - Folding to large bet of 35
+2025-03-27 23:47:51,049 - PlayerAgent - INFO - Significant hand completed with reward: 22.0
+2025-03-27 23:47:53,488 - PlayerAgent - INFO - Large raise to 26 with equity 1.02
+2025-03-27 23:47:53,517 - PlayerAgent - INFO - Significant hand completed with reward: 41.0
+2025-03-27 23:47:54,155 - PlayerAgent - INFO - Folding to large bet of 30
+2025-03-27 23:47:55,494 - PlayerAgent - INFO - Significant hand completed with reward: -24.0
+2025-03-27 23:47:55,799 - PlayerAgent - INFO - Significant hand completed with reward: 45.0
+2025-03-27 23:47:58,086 - PlayerAgent - INFO - Folding to large bet of 35
+2025-03-27 23:47:58,331 - PlayerAgent - INFO - Significant hand completed with reward: 21.0
+2025-03-27 23:47:58,933 - PlayerAgent - INFO - Significant hand completed with reward: -30.0
+2025-03-27 23:48:00,876 - PlayerAgent - INFO - Folding to large bet of 22
+2025-03-27 23:48:01,868 - PlayerAgent - INFO - Large raise to 24 with equity 0.86
+2025-03-27 23:48:01,902 - PlayerAgent - INFO - Significant hand completed with reward: 41.0
+2025-03-27 23:48:09,329 - PlayerAgent - INFO - Significant hand completed with reward: -30.0
+2025-03-27 23:48:09,813 - PlayerAgent - INFO - Large raise to 49 with equity 1.04
+2025-03-27 23:48:14,100 - PlayerAgent - INFO - Significant hand completed with reward: -100.0
+2025-03-27 23:48:15,140 - PlayerAgent - INFO - Significant hand completed with reward: -21.0
+2025-03-27 23:48:18,370 - PlayerAgent - INFO - Significant hand completed with reward: -24.0
+2025-03-27 23:48:19,044 - PlayerAgent - INFO - Significant hand completed with reward: -57.0
+2025-03-27 23:48:19,618 - PlayerAgent - INFO - Large raise to 23 with equity 0.97
+2025-03-27 23:48:19,646 - PlayerAgent - INFO - Significant hand completed with reward: 32.0
+2025-03-27 23:48:20,985 - PlayerAgent - INFO - Significant hand completed with reward: -37.0
+2025-03-27 23:48:22,741 - PlayerAgent - INFO - Large raise to 26 with equity 1.00
+2025-03-27 23:48:22,772 - PlayerAgent - INFO - Significant hand completed with reward: 43.0
+2025-03-27 23:48:25,819 - PlayerAgent - INFO - Significant hand completed with reward: 28.0
+2025-03-27 23:48:27,930 - PlayerAgent - INFO - Large raise to 30 with equity 0.92
+2025-03-27 23:48:27,997 - PlayerAgent - INFO - Large raise to 54 with equity 0.94
+2025-03-27 23:48:28,022 - PlayerAgent - INFO - Significant hand completed with reward: 100.0
+2025-03-27 23:48:28,438 - PlayerAgent - INFO - Significant hand completed with reward: -37.0
+2025-03-27 23:48:29,850 - PlayerAgent - INFO - Folding to large bet of 73
+2025-03-27 23:48:29,852 - PlayerAgent - INFO - Significant hand completed with reward: -35.0
+2025-03-27 23:48:30,118 - PlayerAgent - INFO - Significant hand completed with reward: -80.0
+2025-03-27 23:48:32,636 - PlayerAgent - INFO - Large raise to 49 with equity 1.05
+2025-03-27 23:48:32,662 - PlayerAgent - INFO - Significant hand completed with reward: 100.0
+2025-03-27 23:48:33,693 - PlayerAgent - INFO - Significant hand completed with reward: 26.0
+2025-03-27 23:48:34,274 - PlayerAgent - INFO - Significant hand completed with reward: 27.0
+2025-03-27 23:48:39,154 - PlayerAgent - INFO - Large raise to 51 with equity 0.91
+2025-03-27 23:48:39,179 - PlayerAgent - INFO - Significant hand completed with reward: 71.0
+2025-03-27 23:48:40,624 - PlayerAgent - INFO - Significant hand completed with reward: 22.0
+2025-03-27 23:48:41,522 - PlayerAgent - INFO - Large raise to 33 with equity 1.00
+2025-03-27 23:48:41,571 - PlayerAgent - INFO - Significant hand completed with reward: 87.0
+2025-03-27 23:48:42,231 - PlayerAgent - INFO - Significant hand completed with reward: 51.0
+2025-03-27 23:48:43,112 - PlayerAgent - INFO - Folding to large bet of 30
+2025-03-27 23:48:44,317 - PlayerAgent - INFO - Large raise to 54 with equity 1.01
+2025-03-27 23:48:44,342 - PlayerAgent - INFO - Significant hand completed with reward: 74.0
+2025-03-27 23:48:44,916 - PlayerAgent - INFO - Large raise to 33 with equity 1.03
+2025-03-27 23:48:44,968 - PlayerAgent - INFO - Significant hand completed with reward: 90.0
+2025-03-27 23:48:46,931 - PlayerAgent - INFO - Folding to large bet of 24
+2025-03-27 23:48:48,505 - PlayerAgent - INFO - Large raise to 39 with equity 1.03
+2025-03-27 23:48:48,579 - PlayerAgent - INFO - Significant hand completed with reward: -100.0
+2025-03-27 23:48:49,590 - PlayerAgent - INFO - Large raise to 46 with equity 0.77
+2025-03-27 23:48:49,640 - PlayerAgent - INFO - Significant hand completed with reward: -100.0
+2025-03-27 23:48:50,649 - PlayerAgent - INFO - Large raise to 23 with equity 0.74
+2025-03-27 23:48:50,810 - PlayerAgent - INFO - Significant hand completed with reward: 100.0
+2025-03-27 23:48:53,663 - PlayerAgent - INFO - Folding to large bet of 25
+2025-03-27 23:48:55,910 - PlayerAgent - INFO - Folding to large bet of 97
+2025-03-27 23:48:55,913 - PlayerAgent - INFO - Significant hand completed with reward: -39.0
+2025-03-27 23:48:56,680 - PlayerAgent - INFO - Folding to large bet of 25
+2025-03-27 23:48:59,666 - PlayerAgent - INFO - Significant hand completed with reward: -78.0
+2025-03-27 23:49:03,235 - PlayerAgent - INFO - Significant hand completed with reward: -50.0
+2025-03-27 23:49:04,728 - PlayerAgent - INFO - Folding to large bet of 30
+2025-03-27 23:49:09,300 - PlayerAgent - INFO - Folding to large bet of 37
+2025-03-27 23:49:09,518 - PlayerAgent - INFO - Significant hand completed with reward: -25.0
+2025-03-27 23:49:10,996 - PlayerAgent - INFO - Large raise to 25 with equity 0.99
+2025-03-27 23:49:11,067 - PlayerAgent - INFO - Significant hand completed with reward: 100.0
+2025-03-27 23:49:13,802 - PlayerAgent - INFO - Large raise to 57 with equity 0.99
+2025-03-27 23:49:13,875 - PlayerAgent - INFO - Significant hand completed with reward: -100.0
+2025-03-27 23:49:14,490 - PlayerAgent - INFO - Significant hand completed with reward: -71.0
+2025-03-27 23:49:15,184 - PlayerAgent - INFO - Folding to large bet of 100
+2025-03-27 23:49:15,187 - PlayerAgent - INFO - Significant hand completed with reward: -42.0
+2025-03-27 23:49:15,628 - PlayerAgent - INFO - Large raise to 36 with equity 0.88
+2025-03-27 23:49:15,654 - PlayerAgent - INFO - Significant hand completed with reward: 54.0
+2025-03-27 23:49:16,078 - PlayerAgent - INFO - Large raise to 25 with equity 0.75
+2025-03-27 23:49:16,128 - PlayerAgent - INFO - Significant hand completed with reward: -96.0
+2025-03-27 23:49:19,177 - PlayerAgent - INFO - Significant hand completed with reward: -100.0
+2025-03-27 23:49:20,499 - PlayerAgent - INFO - Significant hand completed with reward: -33.0
+2025-03-27 23:49:21,346 - PlayerAgent - INFO - Large raise to 26 with equity 0.90
+2025-03-27 23:49:21,395 - PlayerAgent - INFO - Significant hand completed with reward: 75.0
+2025-03-27 23:49:21,593 - PlayerAgent - INFO - Large raise to 24 with equity 0.78
+2025-03-27 23:49:21,664 - PlayerAgent - INFO - Large raise to 62 with equity 1.06
+2025-03-27 23:49:21,691 - PlayerAgent - INFO - Significant hand completed with reward: 35.0
+2025-03-27 23:49:21,904 - PlayerAgent - INFO - Significant hand completed with reward: -37.0
+2025-03-27 23:49:22,111 - PlayerAgent - INFO - Large raise to 23 with equity 0.84
+2025-03-27 23:49:23,444 - PlayerAgent - INFO - Significant hand completed with reward: 28.0
+2025-03-27 23:49:23,913 - PlayerAgent - INFO - Significant hand completed with reward: -35.0
+2025-03-27 23:49:25,123 - PlayerAgent - INFO - Folding to large bet of 30
+2025-03-27 23:49:27,599 - PlayerAgent - INFO - Significant hand completed with reward: 66.0
+2025-03-27 23:49:28,107 - PlayerAgent - INFO - Significant hand completed with reward: -100.0
+2025-03-27 23:49:29,984 - PlayerAgent - INFO - Significant hand completed with reward: -42.0
+2025-03-27 23:49:32,609 - PlayerAgent - INFO - Significant hand completed with reward: 100.0
+2025-03-27 23:49:34,623 - PlayerAgent - INFO - Folding to large bet of 92
+2025-03-27 23:49:34,627 - PlayerAgent - INFO - Significant hand completed with reward: -37.0
+2025-03-27 23:49:36,213 - PlayerAgent - INFO - Folding to large bet of 35
+2025-03-27 23:49:37,904 - PlayerAgent - INFO - Significant hand completed with reward: 25.0
+2025-03-27 23:49:38,376 - PlayerAgent - INFO - Folding to large bet of 30
+2025-03-27 23:49:41,577 - PlayerAgent - INFO - Folding to large bet of 42
+2025-03-27 23:49:44,010 - PlayerAgent - INFO - Significant hand completed with reward: 37.0
+2025-03-27 23:49:44,200 - PlayerAgent - INFO - Significant hand completed with reward: -55.0
+2025-03-27 23:49:44,622 - PlayerAgent - INFO - Significant hand completed with reward: 26.0
+2025-03-27 23:49:45,038 - PlayerAgent - INFO - Folding to large bet of 84
+2025-03-27 23:49:45,054 - PlayerAgent - INFO - Significant hand completed with reward: -43.0
+2025-03-27 23:49:45,695 - PlayerAgent - INFO - Significant hand completed with reward: -53.0
+2025-03-27 23:49:46,464 - PlayerAgent - INFO - Significant hand completed with reward: 39.0
+2025-03-27 23:49:47,236 - PlayerAgent - INFO - Folding to large bet of 30
+2025-03-27 23:49:48,522 - PlayerAgent - INFO - Significant hand completed with reward: -37.0
+2025-03-27 23:49:52,157 - PlayerAgent - INFO - Large raise to 44 with equity 0.83
+2025-03-27 23:49:52,208 - PlayerAgent - INFO - Significant hand completed with reward: -100.0
+2025-03-27 23:49:53,003 - PlayerAgent - INFO - Folding to large bet of 92
+2025-03-27 23:49:53,007 - PlayerAgent - INFO - Significant hand completed with reward: -37.0
+2025-03-27 23:49:53,509 - PlayerAgent - INFO - Significant hand completed with reward: 33.0
+2025-03-27 23:49:55,077 - PlayerAgent - INFO - Folding to large bet of 42
+2025-03-27 23:49:55,589 - PlayerAgent - INFO - Significant hand completed with reward: -100.0
+2025-03-27 23:49:56,153 - PlayerAgent - INFO - Significant hand completed with reward: -22.0
+2025-03-27 23:49:57,207 - PlayerAgent - INFO - Folding to large bet of 30
+2025-03-27 23:49:58,848 - PlayerAgent - INFO - Large raise to 47 with equity 0.76
+2025-03-27 23:49:58,922 - PlayerAgent - INFO - Significant hand completed with reward: -100.0
+2025-03-27 23:50:02,008 - PlayerAgent - INFO - Folding to large bet of 65
+2025-03-27 23:50:02,012 - PlayerAgent - INFO - Significant hand completed with reward: -26.0
+2025-03-27 23:50:02,605 - PlayerAgent - INFO - Folding to large bet of 30
+2025-03-27 23:50:03,851 - PlayerAgent - INFO - Significant hand completed with reward: -25.0
+2025-03-27 23:50:04,484 - PlayerAgent - INFO - Large raise to 22 with equity 0.90
+2025-03-27 23:50:04,515 - PlayerAgent - INFO - Significant hand completed with reward: 35.0
+2025-03-27 23:50:06,109 - PlayerAgent - INFO - Significant hand completed with reward: -25.0
+2025-03-27 23:50:07,226 - PlayerAgent - INFO - Large raise to 32 with equity 0.84
+2025-03-27 23:50:07,281 - PlayerAgent - INFO - Large raise to 37 with equity 1.13
+2025-03-27 23:50:07,311 - PlayerAgent - INFO - Significant hand completed with reward: 100.0
+2025-03-27 23:50:08,580 - PlayerAgent - INFO - Large raise to 54 with equity 0.88
+2025-03-27 23:50:08,629 - PlayerAgent - INFO - Significant hand completed with reward: -100.0
+2025-03-27 23:50:13,241 - PlayerAgent - INFO - Significant hand completed with reward: 22.0
+2025-03-27 23:50:15,061 - PlayerAgent - INFO - Large raise to 25 with equity 0.73
+2025-03-27 23:50:15,958 - PlayerAgent - INFO - Large raise to 38 with equity 0.88
+2025-03-27 23:50:16,008 - PlayerAgent - INFO - Significant hand completed with reward: 100.0
+2025-03-27 23:50:18,035 - PlayerAgent - INFO - Significant hand completed with reward: 29.0
+2025-03-27 23:50:19,080 - PlayerAgent - INFO - Folding to large bet of 80
+2025-03-27 23:50:19,084 - PlayerAgent - INFO - Significant hand completed with reward: -32.0
+2025-03-27 23:50:21,059 - PlayerAgent - INFO - Significant hand completed with reward: 22.0
+2025-03-27 23:50:21,492 - PlayerAgent - INFO - Significant hand completed with reward: 27.0
+2025-03-27 23:50:22,965 - PlayerAgent - INFO - Folding to large bet of 35
+2025-03-27 23:50:25,365 - PlayerAgent - INFO - Folding to large bet of 25
+2025-03-27 23:50:25,824 - PlayerAgent - INFO - Large raise to 37 with equity 1.02
+2025-03-27 23:50:25,850 - PlayerAgent - INFO - Significant hand completed with reward: 53.0
+2025-03-27 23:50:26,294 - PlayerAgent - INFO - Large raise to 65 with equity 1.07
+2025-03-27 23:50:26,319 - PlayerAgent - INFO - Significant hand completed with reward: 100.0
+2025-03-27 23:50:27,170 - PlayerAgent - INFO - Significant hand completed with reward: 22.0
+2025-03-27 23:50:28,144 - PlayerAgent - INFO - Significant hand completed with reward: -55.0
+2025-03-27 23:50:28,756 - PlayerAgent - INFO - Large raise to 29 with equity 0.79
+2025-03-27 23:50:30,378 - PlayerAgent - INFO - Folding to large bet of 25
+2025-03-27 23:50:32,780 - PlayerAgent - INFO - Significant hand completed with reward: -22.0
+2025-03-27 23:50:34,345 - PlayerAgent - INFO - Large raise to 23 with equity 0.76
+2025-03-27 23:50:34,436 - PlayerAgent - INFO - Significant hand completed with reward: 100.0
+2025-03-27 23:50:35,263 - PlayerAgent - INFO - Significant hand completed with reward: -50.0
+2025-03-27 23:50:37,321 - PlayerAgent - INFO - Folding to large bet of 37
+2025-03-27 23:50:37,552 - PlayerAgent - INFO - Folding to large bet of 33
