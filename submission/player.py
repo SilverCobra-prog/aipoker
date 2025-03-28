@@ -14,10 +14,18 @@ class PlayerAgent(Agent):
     def __init__(self, stream: bool = False):
         super().__init__(stream)
         self.wins = 0
+        self.total = 0
         self.evaluator = Evaluator()
 
     def act(self, observation, reward, terminated, truncated, info):
+        if self.total >= 1.5 * (1000 - info["hand_number"]) + 1:
+            action_type = action_types.FOLD.value
+            raise_amount = 0
+            card_to_discard = -1
+            return action_type, raise_amount, card_to_discard
+        #(self.wins/(info["hand_number"]+1))
         # Log new street starts with important info
+        
         if observation["street"] == 0:  # Preflop
             self.logger.debug(f"Hole cards: {[int_to_card(c) for c in observation['my_cards']]}")
         elif observation["community_cards"]:  # New community cards revealed
@@ -45,7 +53,7 @@ class PlayerAgent(Agent):
             return my_hand_rank < opp_hand_rank
 
         # Run Monte Carlo simulation
-        num_simulations = 5000
+        num_simulations = 1000
         wins = sum(
             evaluate_hand((my_cards, opp_drawn_card + drawn_cards[: 2 - len(opp_drawn_card)], community_cards + drawn_cards[2 - len(opp_drawn_card) :]))
             for _ in range(num_simulations)
@@ -59,7 +67,7 @@ class PlayerAgent(Agent):
         pot_odds = continue_cost / (continue_cost + pot_size) if continue_cost > 0 else 0
         
 
-
+        
         self.logger.debug(f"Equity: {equity:.2f}, Pot odds: {pot_odds:.2f}")
 
         # Decision making
@@ -68,8 +76,13 @@ class PlayerAgent(Agent):
 
         og_equity = equity
         # Adjusted Equity
-        equity = equity - (0.9 - equity) * ((observation["opp_bet"] * 2) / 100) 
-        equity = equity * (1+(np.exp((0.5 - self.wins/(info["hand_number"]+1)))-1)/(min(info["hand_number"]+1, 100)))
+        #print(equity)
+        equity = equity * (1+(np.exp((0.5 - self.wins/(info["hand_number"]+1)))-1)*(min(info["hand_number"]+1, 50)/50))
+        #print(equity)
+
+        equity = equity - (1.0 - equity) * ((observation["opp_bet"] * 2) / 200) 
+        #print(equity)
+        
         # Only log very significant decisions at INFO level
         if equity > 0.7 and observation["valid_actions"][action_types.RAISE.value] and random.random() < 0.7:
             raise_amount = min(int(pot_size * random.uniform(equity/2, equity*1.5)), observation["max_raise"])
@@ -88,7 +101,7 @@ class PlayerAgent(Agent):
                 action_type = action_types.RAISE.value
         elif observation["valid_actions"][action_types.DISCARD.value]:
 
-            num_simulations = 500 #change this for 5x
+            num_simulations = 100 #change this for 5x
 
             wins = sum(
             evaluate_hand(([my_cards[0], drawn_cards[0]], opp_drawn_card + drawn_cards[1: 3 - len(opp_drawn_card)], community_cards + drawn_cards[3 - len(opp_drawn_card) :]))
@@ -124,6 +137,8 @@ class PlayerAgent(Agent):
         return action_type, raise_amount, card_to_discard
 
     def observe(self, observation, reward, terminated, truncated, info):
+        #print(reward)
+        self.total += reward
         if reward > 0:
             self.wins += 1
         #print(observation)

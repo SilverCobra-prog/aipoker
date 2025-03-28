@@ -5,7 +5,7 @@
         "player_id": "bot0"
     },
     "bot1": {
-        "file_path": "submission.playerold.PlayerAgent",
+        "file_path": "agents.test_agents.AllInAgent",
         "port": 8001,
         "player_id": "bot1"
     },
