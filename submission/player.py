@@ -53,7 +53,7 @@ class PlayerAgent(Agent):
             return my_hand_rank < opp_hand_rank
 
         # Run Monte Carlo simulation
-        num_simulations = 1000
+        num_simulations = 5000
         wins = sum(
             evaluate_hand((my_cards, opp_drawn_card + drawn_cards[: 2 - len(opp_drawn_card)], community_cards + drawn_cards[2 - len(opp_drawn_card) :]))
             for _ in range(num_simulations)
@@ -77,14 +77,22 @@ class PlayerAgent(Agent):
         og_equity = equity
         # Adjusted Equity
         #print(equity)
-        equity = equity * (1+(np.exp((0.5 - self.wins/(info["hand_number"]+1)))-1)*(min(info["hand_number"]+1, 50)/50))
+        equity = equity * (1+(np.exp((0.5 - self.wins/(info["hand_number"]+1)))-1)*(min(info["hand_number"]+1, 100)/100))
         #print(equity)
 
-        equity = equity - (1.0 - equity) * ((observation["opp_bet"] * 2) / 200) 
+        if observation["street"] == 0:
+            equity = equity - (1.0 - equity) * ((observation["opp_bet"] * 2) / 200)
+        else:
+            equity = equity - (1.0 - equity) * ((observation["opp_bet"] * 2) / 100) 
         #print(equity)
         
+        #if observation["street"] == 0:
+        #    print(f"our equity: {equity}  our win rate: {self.wins/(info["hand_number"]+1)}")
+
         # Only log very significant decisions at INFO level
-        if equity > 0.7 and observation["valid_actions"][action_types.RAISE.value] and random.random() < 0.7:
+        if (equity > 0.7 or equity > 0.52 and observation["street"] == 0) and observation["valid_actions"][action_types.RAISE.value] and random.random() < 0.85:
+            if observation["street"] == 0:
+                print("wow we actually bet preflop crazy")
             raise_amount = min(int(pot_size * random.uniform(equity/2, equity*1.5)), observation["max_raise"])
             raise_amount = max(raise_amount, observation["min_raise"])
             action_type = action_types.RAISE.value
@@ -101,7 +109,7 @@ class PlayerAgent(Agent):
                 action_type = action_types.RAISE.value
         elif observation["valid_actions"][action_types.DISCARD.value]:
 
-            num_simulations = 100 #change this for 5x
+            num_simulations = 1000 #change this for 5x
 
             wins = sum(
             evaluate_hand(([my_cards[0], drawn_cards[0]], opp_drawn_card + drawn_cards[1: 3 - len(opp_drawn_card)], community_cards + drawn_cards[3 - len(opp_drawn_card) :]))
