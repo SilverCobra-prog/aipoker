@@ -12,10 +12,11 @@ class PlayerAgent(Agent):
 
     def __init__(self, stream: bool = False):
         super().__init__(stream)
+        self.win = 0
         self.evaluator = Evaluator()
 
     def act(self, observation, reward, terminated, truncated, info):
-        # Log new street starts with important info
+        # Log new street starts with important info 
         if observation["street"] == 0:  # Preflop
             self.logger.debug(f"Hole cards: {[int_to_card(c) for c in observation['my_cards']]}")
         elif observation["community_cards"]:  # New community cards revealed
@@ -85,5 +86,7 @@ class PlayerAgent(Agent):
         return action_type, raise_amount, card_to_discard
 
     def observe(self, observation, reward, terminated, truncated, info):
+        if reward > 0:
+            self.win += 1 
         if terminated and abs(reward) > 20:  # Only log significant hand results
             self.logger.info(f"Significant hand completed with reward: {reward}")

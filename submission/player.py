@@ -1,6 +1,7 @@
 from agents.agent import Agent
 from gym_env import PokerEnv
 import random
+import numpy as np
 from treys import Evaluator
 
 action_types = PokerEnv.ActionType
@@ -12,6 +13,7 @@ class PlayerAgent(Agent):
 
     def __init__(self, stream: bool = False):
         super().__init__(stream)
+        self.wins = 0
         self.evaluator = Evaluator()
 
     def act(self, observation, reward, terminated, truncated, info):
@@ -66,8 +68,8 @@ class PlayerAgent(Agent):
 
         og_equity = equity
         # Adjusted Equity
-        equity = equity - (0.9 - equity) * ((observation["opp_bet"] * 2) / 100)
-
+        equity = equity - (0.9 - equity) * ((observation["opp_bet"] * 2) / 100) 
+        equity = equity * (1+(np.exp((0.5 - self.wins/(info["hand_number"]+1)))-1)/(min(info["hand_number"]+1, 100)))
         # Only log very significant decisions at INFO level
         if equity > 0.7 and observation["valid_actions"][action_types.RAISE.value] and random.random() < 0.7:
             raise_amount = min(int(pot_size * random.uniform(equity/2, equity*1.5)), observation["max_raise"])
@@ -122,6 +124,8 @@ class PlayerAgent(Agent):
         return action_type, raise_amount, card_to_discard
 
     def observe(self, observation, reward, terminated, truncated, info):
+        if reward > 0:
+            self.wins += 1
         #print(observation)
         if terminated and abs(reward) > 20:  # Only log significant hand results
             self.logger.info(f"Significant hand completed with reward: {reward}")
