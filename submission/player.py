@@ -16,6 +16,7 @@ class PlayerAgent(Agent):
         self.wins = 0
         self.total = 0
         self.evaluator = Evaluator()
+        self.in_position = True
 
     def act(self, observation, reward, terminated, truncated, info):
         if self.total >= 1.5 * (1000 - info["hand_number"]) + 1:
@@ -28,6 +29,10 @@ class PlayerAgent(Agent):
         
         if observation["street"] == 0:  # Preflop
             self.logger.debug(f"Hole cards: {[int_to_card(c) for c in observation['my_cards']]}")
+            if(observation["opp_last_action"]) == 'None':
+                self.in_position = False
+            else: 
+                self.in_position = True
         elif observation["community_cards"]:  # New community cards revealed
             visible_cards = [c for c in observation["community_cards"] if c != -1]
             if visible_cards:
@@ -53,7 +58,7 @@ class PlayerAgent(Agent):
             return my_hand_rank < opp_hand_rank
 
         # Run Monte Carlo simulation
-        num_simulations = 5000
+        num_simulations = 1000
         wins = sum(
             evaluate_hand((my_cards, opp_drawn_card + drawn_cards[: 2 - len(opp_drawn_card)], community_cards + drawn_cards[2 - len(opp_drawn_card) :]))
             for _ in range(num_simulations)
@@ -85,14 +90,17 @@ class PlayerAgent(Agent):
         else:
             equity = equity - (1.0 - equity) * ((observation["opp_bet"] * 2) / 100) 
         #print(equity)
+
+        if self.in_position:
+            equity *= 1.05
+        else:
+            equity *= 0.95
         
         #if observation["street"] == 0:
         #    print(f"our equity: {equity}  our win rate: {self.wins/(info["hand_number"]+1)}")
 
         # Only log very significant decisions at INFO level
-        if (equity > 0.7 or equity > 0.52 and observation["street"] == 0) and observation["valid_actions"][action_types.RAISE.value] and random.random() < 0.85:
-            if observation["street"] == 0:
-                print("wow we actually bet preflop crazy")
+        if (equity > 0.7 or equity > 0.52 and observation["street"] == 0) and observation["valid_actions"][action_types.RAISE.value] and (equity < 0.9 or random.random() < 0.65):
             raise_amount = min(int(pot_size * random.uniform(equity/2, equity*1.5)), observation["max_raise"])
             raise_amount = max(raise_amount, observation["min_raise"])
             action_type = action_types.RAISE.value
@@ -101,15 +109,24 @@ class PlayerAgent(Agent):
         elif equity >= pot_odds and observation["valid_actions"][action_types.CALL.value]:
             action_type = action_types.CALL.value
         elif observation["valid_actions"][action_types.CHECK.value]:
-            if random.random() < 0.75 or observation["valid_actions"][action_types.RAISE.value] == False:
-                action_type = action_types.CHECK.value
-            else:
-                raise_amount = min(int(pot_size * random.uniform(0.5, 1.5)), observation["max_raise"])
-                raise_amount = max(raise_amount, observation["min_raise"])
-                action_type = action_types.RAISE.value
+            if self.in_position:
+                if random.random() < 0.65 or observation["valid_actions"][action_types.RAISE.value] == False:
+                    action_type = action_types.CHECK.value
+                else:
+                    raise_amount = min(int(pot_size * random.uniform(0.5, 1.5)), observation["max_raise"])
+                    raise_amount = max(raise_amount, observation["min_raise"])
+                    action_type = action_types.RAISE.value
+            else: 
+                if random.random() < 0.85 or observation["valid_actions"][action_types.RAISE.value] == False:
+                    action_type = action_types.CHECK.value
+                else:
+                    raise_amount = min(int(pot_size * random.uniform(0.5, 1.5)), observation["max_raise"])
+                    raise_amount = max(raise_amount, observation["min_raise"])
+                    action_type = action_types.RAISE.value
+
         elif observation["valid_actions"][action_types.DISCARD.value]:
 
-            num_simulations = 1000 #change this for 5x
+            num_simulations = 200 #change this for 5x
 
             wins = sum(
             evaluate_hand(([my_cards[0], drawn_cards[0]], opp_drawn_card + drawn_cards[1: 3 - len(opp_drawn_card)], community_cards + drawn_cards[3 - len(opp_drawn_card) :]))
