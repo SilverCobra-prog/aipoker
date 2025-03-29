@@ -127,11 +127,11 @@ class PlayerAgent(Agent):
 
             if equity1 > og_equity and equity1 >= equity2:
                 action_type = action_types.DISCARD.value
-                card_to_discard = 0
+                card_to_discard = 1
                 self.logger.debug(f"Discarding card {card_to_discard}: {int_to_card(my_cards[card_to_discard])}")
             elif equity2 > og_equity and equity1 <= equity2:
                 action_type = action_types.DISCARD.value
-                card_to_discard = 1
+                card_to_discard = 0
                 self.logger.debug(f"Discarding card {card_to_discard}: {int_to_card(my_cards[card_to_discard])}")
 
             else:
