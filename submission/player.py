@@ -58,7 +58,7 @@ class PlayerAgent(Agent):
             return my_hand_rank < opp_hand_rank
 
         # Run Monte Carlo simulation
-        num_simulations = 1000
+        num_simulations = 8000
         wins = sum(
             evaluate_hand((my_cards, opp_drawn_card + drawn_cards[: 2 - len(opp_drawn_card)], community_cards + drawn_cards[2 - len(opp_drawn_card) :]))
             for _ in range(num_simulations)
@@ -126,7 +126,7 @@ class PlayerAgent(Agent):
 
         elif observation["valid_actions"][action_types.DISCARD.value]:
 
-            num_simulations = 200 #change this for 5x
+            num_simulations = 1600 #change this for 5x
 
             wins = sum(
             evaluate_hand(([my_cards[0], drawn_cards[0]], opp_drawn_card + drawn_cards[1: 3 - len(opp_drawn_card)], community_cards + drawn_cards[3 - len(opp_drawn_card) :]))
